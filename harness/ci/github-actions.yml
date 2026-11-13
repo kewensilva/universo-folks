@@ -1,0 +1,46 @@
+# Template de CI. Copie para .github/workflows/ci.yml quando o repositório estiver no GitHub.
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  harness:
+    name: Harness (estrutura + RAG)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node harness/check.mjs
+      - run: node harness/rag/index.mjs
+      - run: node harness/evals/run-rag.mjs --min-hit3 0.85
+
+  api:
+    name: API (typecheck, lint, testes, e2e)
+    runs-on: ubuntu-latest
+    if: hashFiles('apps/api/package.json') != ''
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env: { POSTGRES_USER: folks, POSTGRES_PASSWORD: folks, POSTGRES_DB: universo_folks_test_ci }
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U folks" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://folks:folks@localhost:5432/universo_folks_test_ci?schema=public
+      JWT_ACCESS_SECRET: ci-access-secret
+      JWT_REFRESH_SECRET: ci-refresh-secret
+    defaults: { run: { working-directory: apps/api } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npx prisma migrate deploy
+      - run: npm run typecheck
+      - run: npm run lint --if-present
+      - run: npm test --if-present
+      - run: npm run test:e2e --if-present

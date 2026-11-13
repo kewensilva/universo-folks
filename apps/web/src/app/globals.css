@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Tokens do protótipo (universo-folks.html) — espelham @folks/shared/tokens */
+@theme {
+  --color-bg: #03040f;
+  --color-bg-2: #0b0d22;
+  --color-card: #12142e;
+  --color-card-2: #191c3d;
+  --color-line: rgba(170, 167, 208, 0.16);
+  --color-ink: #f4f2ff;
+  --color-muted: #aaa7d0;
+  --color-dim: #7a77a3;
+  --color-amber: #ffb020;
+  --color-amber-d: #c97f00;
+  --color-green: #45d483;
+  --color-green-d: #23a35c;
+  --color-red: #ff5c6c;
+  --color-blue: #3d8bff;
+  --color-purple: #9b7bff;
+  --color-pink: #ff5fa2;
+  --color-gold: #ffc83d;
+  --color-on-amber: #2a1700;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 20px;
+}
+
+html, body { background: var(--color-bg); color: var(--color-ink); }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+/* céu estrelado do protótipo */
+.starfield {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.75), transparent 60%),
+    radial-gradient(1px 1px at 68% 12%, rgba(255,255,255,.55), transparent 60%),
+    radial-gradient(1.5px 1.5px at 82% 64%, rgba(255,255,255,.7), transparent 60%),
+    radial-gradient(1px 1px at 28% 76%, rgba(255,255,255,.5), transparent 60%),
+    radial-gradient(1px 1px at 46% 42%, rgba(255,255,255,.45), transparent 60%),
+    radial-gradient(1.5px 1.5px at 92% 28%, rgba(255,255,255,.6), transparent 60%),
+    radial-gradient(1px 1px at 6% 58%, rgba(255,255,255,.5), transparent 60%),
+    radial-gradient(900px 500px at 85% -10%, rgba(155,123,255,.16), transparent 70%),
+    radial-gradient(700px 420px at -10% 110%, rgba(61,139,255,.12), transparent 70%);
+  background-attachment: fixed;
+}
+
+/* botão "3D" do protótipo: sombra sólida embaixo */
+.btn-3d { box-shadow: 0 4px 0 var(--shadow, var(--color-amber-d)); transition: transform .08s, box-shadow .08s; }
+.btn-3d:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 var(--shadow, var(--color-amber-d)); }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

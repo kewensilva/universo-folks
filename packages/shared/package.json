@@ -1,0 +1,18 @@
+{
+  "name": "@folks/shared",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Núcleo compartilhado entre web e app: cliente da API, sessão e perfis, tokens de design do protótipo, formatação pt-BR e tipos das questões.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"dist-test/test/**/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.9.3"
+  }
+}

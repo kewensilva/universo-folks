@@ -1,0 +1,24 @@
+{
+  "name": "@folks/content-ingest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Recebe conte\u00fado gerado pelo Claude (JSON tolerante, Markdown, formato MCP), normaliza para folks.content/v1, valida e planeja a grava\u00e7\u00e3o.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"dist-test/test/**/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.9.3",
+    "zod": "^4.6.7"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  }
+}

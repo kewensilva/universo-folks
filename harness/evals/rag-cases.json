@@ -1,0 +1,190 @@
+[
+  {
+    "q": "um colaborador pode estar em duas empresas ao mesmo tempo?",
+    "expect": "adr/0003-uma-empresa-por-pessoa|uma-pessoa-so-pode-estar-em-uma-empresa"
+  },
+  {
+    "q": "quantos administradores a empresa pode ter",
+    "expect": "adr/0004-cotas-de-licenca"
+  },
+  {
+    "q": "limite de licenças de colaboradores definido pelo master",
+    "expect": "0004-cotas-de-licenca|regras-de-negocio"
+  },
+  {
+    "q": "o que o plano grátis libera",
+    "expect": "regras-de-negocio"
+  },
+  {
+    "q": "quantas rodadas de prática infinita por dia no grátis",
+    "expect": "regras-de-negocio|decisoes-do-cliente"
+  },
+  {
+    "q": "menor de idade pode ver anúncio com recompensa",
+    "expect": "regras-de-negocio|revenuecat-admob"
+  },
+  {
+    "q": "nota mínima para passar na certificação",
+    "expect": "regras-de-negocio"
+  },
+  {
+    "q": "como gerar migração do prisma sem apagar dados",
+    "expect": "aprendizados|adr"
+  },
+  {
+    "q": "webhook do asaas pagamento recebido libera premium",
+    "expect": "integracoes/asaas|0006-pagamentos"
+  },
+  {
+    "q": "premium no app iOS precisa ser pela loja",
+    "expect": "0006-pagamentos|revenuecat-admob"
+  },
+  {
+    "q": "ligar vídeos da pasta do vimeo às lições",
+    "expect": "integracoes/vimeo"
+  },
+  {
+    "q": "anti-pulo do vídeo",
+    "expect": "integracoes/vimeo|regras-de-negocio|aprendizados"
+  },
+  {
+    "q": "exercícios gerados no app versus questões do banco",
+    "expect": "0005-conteudo-bank-vs-generated"
+  },
+  {
+    "q": "como o claude cria um planeta",
+    "expect": "0007-mcp|visao-geral"
+  },
+  {
+    "q": "isolamento entre empresas tenant_id",
+    "expect": "0001-multi-tenant"
+  },
+  {
+    "q": "trocar entre modo individual e modo empresa",
+    "expect": "0002-contexto|perfis-e-permissoes"
+  },
+  {
+    "q": "o que significa insígnia",
+    "expect": "glossario|regras-de-negocio"
+  },
+  {
+    "q": "vídeo interativo scorm xapi",
+    "expect": "0008-lrs-xapi"
+  },
+  {
+    "q": "relatório csv excel da empresa",
+    "expect": "regras-de-negocio|convencoes"
+  },
+  {
+    "q": "erro daily_limit 409",
+    "expect": "convencoes|regras-de-negocio"
+  },
+  {
+    "q": "qual a fase atual do projeto e o próximo passo",
+    "expect": "roadmap"
+  },
+  {
+    "q": "quem pode excluir um master",
+    "expect": "perfis-e-permissoes"
+  },
+  {
+    "q": "quais tabelas guardam o engajamento",
+    "expect": "modelo-de-dados|glossario"
+  },
+  {
+    "q": "o que falta perguntar ao cliente",
+    "expect": "decisoes-do-cliente"
+  },
+  {
+    "q": "quem pode conectar o claude na plataforma e para quê",
+    "expect": "0007-mcp"
+  },
+  {
+    "q": "conector do claude.ai precisa de oauth",
+    "expect": "0007-mcp"
+  },
+  {
+    "q": "como importar os planetas que o claude já criou",
+    "expect": "importacao-de-conteudo|0010-pipeline"
+  },
+  {
+    "q": "reimportar o mesmo json duplica os cursos?",
+    "expect": "0010-pipeline|importacao-de-conteudo"
+  },
+  {
+    "q": "curso com progresso de aluno é sobrescrito na importação",
+    "expect": "0010-pipeline|importacao-de-conteudo"
+  },
+  {
+    "q": "como o aluno responde uma questão de ordenar ou montar frase",
+    "expect": "tipos-de-questao-e-widgets|0011-tipos-de-questao"
+  },
+  {
+    "q": "quem corrige o simulador com sliders",
+    "expect": "tipos-de-questao-e-widgets|0011-tipos-de-questao"
+  },
+  {
+    "q": "planeta freemium com unidades isFree",
+    "expect": "0011-tipos-de-questao|decisoes-do-cliente"
+  },
+  {
+    "q": "reflexão do aluno aparece para o administrador da empresa?",
+    "expect": "tipos-de-questao-e-widgets|decisoes-do-cliente"
+  },
+  {
+    "q": "qual a stack do app mobile e da web",
+    "expect": "0012-arquitetura-do-front-end|visao-tecnica"
+  },
+  {
+    "q": "onde fica o refresh token na web",
+    "expect": "0012-arquitetura-do-front-end|duas-renovacoes"
+  },
+  {
+    "q": "o administrador da empresa usa o app?",
+    "expect": "0012-arquitetura-do-front-end|front-end-telas"
+  },
+  {
+    "q": "quais telas o master já tem no painel",
+    "expect": "front-end-telas"
+  },
+  {
+    "q": "o token do claude pode acessar relatórios ou dados de pessoas",
+    "expect": "0007"
+  },
+  {
+    "q": "apagar campo no formulário de edição não salva",
+    "expect": "campo-apagado"
+  },
+  {
+    "q": "como cadastrar uma metodologia de prática como mito ou verdade",
+    "expect": "0013|tipos-de-questao"
+  },
+  {
+    "q": "modelo de trilha unidade com vídeo e prática no final",
+    "expect": "0013"
+  },
+  {
+    "q": "simulação por voz microfone foto câmera em breve",
+    "expect": "0013"
+  },
+  {
+    "q": "quais galáxias o plano premium plus libera",
+    "expect": "0014|regras-de-negocio"
+  },
+  {
+    "q": "plano básico só cursos gratuitos premium para a vida e para o trabalho",
+    "expect": "0014|regras-de-negocio|decisoes-do-cliente"
+  },
+  {
+    "q": "PATCH volta status ao padrão zod partial default",
+    "expect": "zod-4-partial"
+  },
+  {
+    "q": "criar planeta a partir de pasta do vimeo com subpastas",
+    "expect": "importacao-de-conteudo|decisoes-do-cliente"
+  },
+  {
+    "q": "organizar vídeos corrigir equívoco do claude vídeo fora de ordem",
+    "expect": "front-end-telas|vimeo|decisoes-do-cliente"
+  }
+]

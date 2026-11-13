@@ -1,0 +1,46 @@
+{
+  "workspaces": [
+    "apps/api",
+    "apps/web",
+    "apps/mobile",
+    "packages/shared",
+    "packages/content-ingest",
+    "backend"
+  ],
+  "steps": [
+    "typecheck",
+    "lint",
+    "test"
+  ],
+  "global": [
+    {
+      "name": "harness:check",
+      "when": [
+        "agents/",
+        "skills/",
+        "harness/",
+        "knowledge/",
+        "CLAUDE.md",
+        ".claude/"
+      ],
+      "cmd": [
+        "node",
+        "harness/check.mjs"
+      ]
+    },
+    {
+      "name": "rag:eval",
+      "when": [
+        "knowledge/",
+        "harness/rag/",
+        "harness/evals/rag-cases.json"
+      ],
+      "cmd": [
+        "node",
+        "harness/evals/run-rag.mjs",
+        "--min-hit3",
+        "0.85"
+      ]
+    }
+  ]
+}

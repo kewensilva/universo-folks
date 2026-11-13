@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "folks.content/v1",
+  "source": { "tool": "claude", "notes": "Conversa de criação dos planetas - lote 1" },
+  "planets": [
+    {
+      "key": "comunicacao",
+      "slug": "comunicacao",
+      "name": "Comunicação",
+      "category": "para-o-trabalho",
+      "description": "Comunique-se com clareza, empatia e impacto no trabalho.",
+      "accessTier": "PREMIUM",
+      "courses": [
+        {
+          "key": "comunicacao.comunicacao-assertiva",
+          "slug": "comunicacao-assertiva",
+          "title": "Comunicação Assertiva",
+          "description": "Expressar o que pensa com clareza e respeito.",
+          "hasCertificate": true,
+          "estimatedMinutes": 40,
+          "units": [
+            {
+              "title": "O que é assertividade",
+              "lessons": [
+                {
+                  "type": "LESSON",
+                  "title": "Aula: passiva, agressiva ou assertiva?",
+                  "slides": [
+                    { "heading": "Três jeitos de se comunicar", "text": "Passivo: evita conflito e se cala. Agressivo: impõe. Assertivo: fala com clareza e respeita o outro." },
+                    { "heading": "Por que importa", "text": "Assertividade reduz retrabalho e conflitos e aumenta a confiança da equipe." }
+                  ]
+                },
+                {
+                  "type": "VIDEO",
+                  "title": "Vídeo: assertividade na prática",
+                  "videoTitle": "Assertividade na prática",
+                  "vimeoUrl": "https://vimeo.com/123456789/abcdef1234",
+                  "durationSeconds": 180
+                },
+                {
+                  "type": "PRACTICE",
+                  "title": "Prática: assertividade",
+                  "questions": [
+                    {
+                      "type": "SINGLE_CHOICE",
+                      "prompt": "Qual frase é assertiva?",
+                      "explanation": "Ela expressa a necessidade com clareza, sem atacar a pessoa.",
+                      "options": [
+                        { "text": "Preciso do relatório até sexta para fechar o mês.", "isCorrect": true },
+                        { "text": "Você sempre atrasa tudo!", "isCorrect": false },
+                        { "text": "Tudo bem, quando der você me manda.", "isCorrect": false }
+                      ]
+                    },
+                    {
+                      "type": "TRUE_FALSE",
+                      "prompt": "Ser assertivo é sempre concordar com o outro.",
+                      "options": [
+                        { "text": "Verdadeiro", "isCorrect": false },
+                        { "text": "Falso", "isCorrect": true }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Dizer não sem culpa",
+              "lessons": [
+                {
+                  "type": "VIDEO",
+                  "title": "Vídeo: como dizer não",
+                  "videoTitle": "Como dizer não",
+                  "vimeoUrl": null
+                },
+                {
+                  "type": "PRACTICE",
+                  "title": "Prática: dizer não",
+                  "questions": [
+                    {
+                      "type": "MULTIPLE_CHOICE",
+                      "prompt": "Quais elementos ajudam a dizer não de forma assertiva? (marque todas)",
+                      "options": [
+                        { "text": "Explicar o motivo brevemente", "isCorrect": true },
+                        { "text": "Oferecer uma alternativa", "isCorrect": true },
+                        { "text": "Pedir desculpas várias vezes", "isCorrect": false }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "exam": {
+            "title": "Certificação: Comunicação Assertiva",
+            "questionSource": "BANK",
+            "questions": [
+              {
+                "type": "SINGLE_CHOICE",
+                "prompt": "A comunicação assertiva busca:",
+                "options": [
+                  { "text": "Clareza com respeito", "isCorrect": true },
+                  { "text": "Vencer a discussão", "isCorrect": false },
+                  { "text": "Evitar qualquer conflito", "isCorrect": false }
+                ]
+              },
+              {
+                "type": "SINGLE_CHOICE",
+                "prompt": "Ao recusar um pedido, o ideal é:",
+                "options": [
+                  { "text": "Dizer não, explicar e propor alternativa", "isCorrect": true },
+                  { "text": "Aceitar para não criar clima ruim", "isCorrect": false }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "financas-pessoais",
+      "slug": "financas-pessoais",
+      "name": "Finanças pessoais",
+      "category": "para-a-vida",
+      "description": "Organize seu dinheiro sem complicação.",
+      "accessTier": "FREE",
+      "courses": [
+        {
+          "key": "financas-pessoais.orcamento",
+          "slug": "orcamento",
+          "title": "Orçamento do mês",
+          "hasCertificate": false,
+          "badge": { "icon": "wallet", "name": "Dono do Orçamento", "text": "Você sabe para onde vai cada real!" },
+          "units": [
+            { "title": "Para onde vai o dinheiro", "accessTier": "FREE", "lessons": [
+              { "type": "LESSON", "title": "Aula: anotar gastos", "slides": [ { "heading": "Comece anotando", "text": "Durante 7 dias, anote tudo o que gastar." } ] }
+            ] },
+            { "title": "Método 50-30-20", "accessTier": "FREE", "lessons": [
+              { "type": "LESSON", "title": "Aula: 50-30-20", "slides": [ { "heading": "A regra", "text": "50% necessidades, 30% desejos, 20% futuro." } ] },
+              { "type": "PRACTICE", "title": "Prática: 50-30-20", "questions": [
+                { "type": "SINGLE_CHOICE", "prompt": "Com R$ 2.000, quanto vai para o futuro no 50-30-20?", "options": [ { "text": "R$ 400", "isCorrect": true }, { "text": "R$ 600", "isCorrect": false } ] }
+              ] }
+            ] },
+            { "title": "Planilha na prática", "accessTier": "PREMIUM", "lessons": [
+              { "type": "LESSON", "title": "Aula: montando a planilha", "slides": [ { "heading": "Colunas", "text": "Data, descrição, categoria e valor." } ] }
+            ] }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+coverage/
+storage/
+# índice do RAG é gerado (npm run rag:index)
+harness/rag/.index/
+# relatórios de execução
+harness/evals/reports/
+harness/feedback/export/
+backups/
+
+# logins de teste gerados localmente (não versionar)
+*.local.md
+
+# prints de referência das telas (ficam só na máquina)
+/image.png
+/image-*.png

@@ -1,0 +1,10 @@
+{
+  "id": "002-regra-uma-empresa",
+  "objetivo": "O agente consulta o conhecimento e responde a regra do cliente (uma empresa por pessoa), em vez da v0 ou do arquitetura.md.",
+  "prompt": "Um colaborador da empresa A recebeu convite da empresa B. Ele pode aceitar e ficar nas duas?",
+  "checks": [
+    { "type": "responseMatches", "pattern": "(não|nao).{0,120}(uma (única )?empresa|duas empresas)", "descricao": "responde que não pode ficar nas duas" },
+    { "type": "responseMatches", "pattern": "sair|desativ|leave", "descricao": "explica o caminho (sair/desativar)" },
+    { "type": "responseMatches", "pattern": "0003|decis", "descricao": "cita a fonte (ADR 0003 / decisão do cliente)" }
+  ]
+}

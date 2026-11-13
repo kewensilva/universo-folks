@@ -1,0 +1,13 @@
+{
+  "sources": ["knowledge", "CLAUDE.md", "harness/workflows"],
+  "chunkMaxChars": 1400,
+  "chunkOverlapChars": 200,
+  "bm25": { "k1": 1.2, "b": 0.75 },
+  "boost": { "title": 2, "heading": 3, "tags": 2 },
+  "hook": {
+    "topK": 4,
+    "minScore": 4.0,
+    "maxChars": 3500,
+    "minPromptTokens": 2
+  }
+}

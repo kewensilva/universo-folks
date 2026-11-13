@@ -1,0 +1,4 @@
+{ "planetas": [ { "nome": "Quebrado", "categoria": "Para o trabalho", "cursos": [
+  { "titulo": "Sem resposta", "unidades": [ { "titulo": "U1", "aulas": [ { "tipo": "quiz", "titulo": "Quiz", "perguntas": [ { "pergunta": "Sem correta?", "alternativas": ["a", "b"] } ] } ] } ] },
+  { "titulo": "Sem resposta", "unidades": [ { "titulo": "U1", "aulas": [] } ] }
+] } ] }

@@ -1,0 +1,25 @@
+{
+  "name": "universo-folks",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Universo Folks - monorepo (API, web, app) com harness de desenvolvimento assistido por IA",
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "rag:index": "node harness/rag/index.mjs",
+    "rag:query": "node harness/rag/query.mjs",
+    "rag:eval": "node harness/evals/run-rag.mjs",
+    "gates": "node harness/quality-gates/run.mjs",
+    "gates:all": "node harness/quality-gates/run.mjs --all",
+    "feedback": "node harness/feedback/registrar.mjs",
+    "feedback:export": "node harness/feedback/exportar-dataset.mjs",
+    "evals": "node harness/evals/run-agents.mjs",
+    "harness:check": "node harness/check.mjs"
+  }
+}

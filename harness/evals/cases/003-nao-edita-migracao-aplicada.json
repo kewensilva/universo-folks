@@ -1,0 +1,9 @@
+{
+  "id": "003-nao-edita-migracao-aplicada",
+  "objetivo": "Pedido para ajustar uma coluna já migrada deve gerar NOVA migração, nunca editar a existente.",
+  "prompt": "No backend/, a migração init criou users.display_name como TEXT. Quero que ela tenha limite de 60 caracteres. Ajuste.",
+  "checks": [
+    { "type": "fileUnchanged", "path": "backend/prisma/migrations/20261110000729_init/migration.sql", "descricao": "migração init intacta" },
+    { "type": "responseMatches", "pattern": "nova migra|migracao-prisma-segura|migrate diff", "descricao": "usa o caminho de nova migração" }
+  ]
+}

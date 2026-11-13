@@ -1,0 +1,1464 @@
+// =============================================================================
+//  UNIVERSO FOLKS - Schema do banco (PostgreSQL)
+//
+//  Estratégia multi-tenant: schema compartilhado + coluna tenant_id nas tabelas
+//  que pertencem a uma empresa. Conteúdo (planetas/cursos) é GLOBAL, criado pelo
+//  MASTER-FOLKS, e cada tenant só "liga/desliga" o que seus colaboradores veem.
+//
+//  Hierarquia de conteúdo:
+//    StudyCategory (Para a vida / Para o trabalho / Para a escola)
+//      └ Planet (tema)            ex.: Comunicação
+//          └ Course               ex.: Comunicação Assertiva
+//              ├ Unit             ex.: Unidade 1 - Feedback é sobre comportamento
+//              │   └ Lesson       VIDEO | PRACTICE | INTERACTIVE (SCORM/xAPI/cmi5)
+//              └ Exam             Certificação (prova final do curso)
+// =============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// -----------------------------------------------------------------------------
+// ENUMS
+// -----------------------------------------------------------------------------
+
+enum PlatformRole {
+  MASTER_FOLKS
+  USER
+}
+
+enum UserStatus {
+  ACTIVE
+  DISABLED
+}
+
+enum TenantType {
+  B2B
+  B2G
+}
+
+enum TenantStatus {
+  ACTIVE
+  SUSPENDED
+  CANCELED
+}
+
+enum TenantRole {
+  ADMIN_CLIENTE
+  COLABORADOR_CLIENTE
+}
+
+enum MembershipStatus {
+  INVITED /// convite enviado (ocupa licença) - vira ACTIVE ao aceitar
+  ACTIVE
+  DISABLED
+}
+
+enum ContentStatus {
+  DRAFT
+  COMING_SOON
+  PUBLISHED
+  ARCHIVED
+}
+
+enum AccessTier {
+  FREE
+  PREMIUM
+}
+
+enum LessonType {
+  LESSON /// "aula": telas (slides) com texto, visual e demos de áudio
+  VIDEO
+  PRACTICE /// questões do banco OU exercícios gerados no app (generators)
+  INTERACTIVE
+}
+
+/// Origem das questões de uma prática/prova
+enum QuestionSource {
+  BANK /// questões cadastradas no banco - corrigidas no servidor
+  GENERATED /// geradas no aparelho (geradores do protótipo) - app informa acertos/total
+}
+
+/// Tipos de evento de engajamento (pessoa engajada = fez ao menos 1 no dia)
+enum ActivityKind {
+  LESSON
+  PRACTICE
+  REVIEW
+  EXAM
+  INFINITE
+  GAME
+  INTERACTIVE
+}
+
+enum AllowanceFeature {
+  INFINITE /// rodadas de prática infinita
+  JAM /// jam do jogo Campo Harmônico
+}
+
+enum OneTimeTokenPurpose {
+  INVITE
+  PASSWORD_RESET
+}
+
+/// Escolha (SINGLE/MULTIPLE/TRUE_FALSE) usa question_options; os demais guardam a resposta em `data`.
+/// Formato de cada tipo: packages/content-ingest/src/questions.ts
+enum QuestionType {
+  SINGLE_CHOICE
+  MULTIPLE_CHOICE
+  TRUE_FALSE
+  NUMBER /// data: { answer, tolerance? }
+  ORDER /// data: { pieces, answer }
+  BUILD_SENTENCE /// data: { pieces, answer } (pode ter peça a mais)
+  MATCH_PAIRS /// data: { pairs: [{ left, right }] }
+  CLASSIFY /// data: { groups, items: [{ text, group, feedback? }] }
+  SIMULATOR /// data: { simulator: { id, ... }, note? } - regra de acerto roda no app
+}
+
+/// Situação de uma metodologia no catálogo do MASTER (ADR 0013)
+enum MethodologyStatus {
+  ACTIVE /// oferecida ao Claude e aceita sem aviso
+  INACTIVE /// desligada: não é oferecida ao Claude; o conteúdo existente continua funcionando
+  COMING_SOON /// ainda não existe no app (ex.: captura por voz, foto ou vídeo)
+}
+
+enum ProgressStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum PracticeMode {
+  LESSON
+  INFINITE
+}
+
+enum CertificateType {
+  COURSE
+  PLANET
+}
+
+enum AssignmentTarget {
+  PLANET
+  COURSE
+}
+
+enum XpSource {
+  LESSON
+  GAME
+  VIDEO
+  PRACTICE
+  INFINITE_PRACTICE
+  INTERACTIVE
+  EXAM
+  STREAK_BONUS
+  ADJUSTMENT
+}
+
+enum AvatarSlot {
+  SUIT
+  DETAILS
+  VISOR
+  HEAD
+  BACK
+}
+
+enum InteractiveStandard {
+  SCORM_12
+  SCORM_2004
+  XAPI
+  CMI5
+}
+
+enum PlanAudience {
+  B2C
+  B2B
+  B2G
+}
+
+enum BillingInterval {
+  MONTHLY
+  QUARTERLY
+  YEARLY
+  ONE_TIME
+}
+
+enum PaymentProvider {
+  APPLE
+  GOOGLE
+  WEB
+  MANUAL
+  REVENUECAT /// eventos agregados pela RevenueCat (App Store / Play Store / Web)
+  ASAAS /// Pix, boleto e cartão: Premium na web e contratos de empresas
+}
+
+enum SubscriptionStatus {
+  PENDING /// aguardando o primeiro pagamento (não libera nada)
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  EXPIRED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum DevicePlatform {
+  IOS
+  ANDROID
+  WEB
+}
+
+// -----------------------------------------------------------------------------
+// USUÁRIOS E AUTENTICAÇÃO
+// -----------------------------------------------------------------------------
+
+/// Uma pessoa. O mesmo usuário pode ser MASTER, colaborador de N empresas e
+/// aluno B2C ao mesmo tempo - o "modo" ativo vai no token (contexto).
+model User {
+  id              String       @id @default(uuid()) @db.Uuid
+  email           String       @unique
+  /// nulo enquanto um convite de empresa não foi aceito
+  passwordHash    String?      @map("password_hash")
+  name            String
+  displayName     String?      @map("display_name") /// "Como quer ser chamado?"
+  avatarUrl       String?      @map("avatar_url")
+  /// define menor de idade (sem anúncios / recompensas de anúncio)
+  birthDate       DateTime?    @map("birth_date") @db.Date
+  /// boas-vindas, dicas e tour já vistos no app
+  tipsSeen        Json         @default("{}") @map("tips_seen")
+  lastSeenAt      DateTime?    @map("last_seen_at")
+  /// cliente no Asaas (criado no primeiro checkout web)
+  asaasCustomerId String?      @unique @map("asaas_customer_id")
+  platformRole    PlatformRole @default(USER) @map("platform_role")
+  status          UserStatus   @default(ACTIVE)
+  lastLoginAt     DateTime?    @map("last_login_at")
+  createdById     String?      @map("created_by_id") @db.Uuid
+  createdAt       DateTime     @default(now()) @map("created_at")
+  updatedAt       DateTime     @updatedAt @map("updated_at")
+  deletedAt       DateTime?    @map("deleted_at")
+
+  preferences     UserPreferences?
+  gamification    UserGamification?
+  memberships     Membership[]
+  refreshTokens   RefreshToken[]
+  apiTokens       ApiToken[]
+  enrollments     Enrollment[]
+  lessonProgress  LessonProgress[]
+  practiceAttempt PracticeAttempt[]
+  examAttempts    ExamAttempt[]
+  certificates    Certificate[]
+  xpEvents        XpEvent[]
+  dailyActivity   DailyActivity[]
+  avatar          UserAvatarItem[]
+  subscriptions   Subscription[]
+  payments        Payment[]
+  devices         DeviceToken[]
+  scormStates     ScormRuntimeState[]
+  oneTimeTokens   OneTimeToken[]
+  activity        ActivityEvent[]
+  allowances      DailyAllowance[]
+  adRewards       AdReward[]
+  infiniteRecords InfiniteRecord[]
+  courseStates    CourseState[]
+  gameStates      GameState[]
+  badges          UserBadge[]
+
+  @@index([platformRole])
+  @@map("users")
+}
+
+/// Ajustes do app (print "Ajustes").
+model UserPreferences {
+  userId           String   @id @map("user_id") @db.Uuid
+  soundEffects     Boolean  @default(true) @map("sound_effects")
+  questionTimer    Boolean  @default(true) @map("question_timer")
+  reduceAnimations Boolean  @default(false) @map("reduce_animations")
+  dailyGoalXp      Int      @default(100) @map("daily_goal_xp")
+  dailyReminder    Boolean  @default(true) @map("daily_reminder")
+  reminderTime     String   @default("19:00") @map("reminder_time") /// HH:mm
+  timezone         String   @default("America/Sao_Paulo")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_preferences")
+}
+
+model RefreshToken {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  revokedAt DateTime? @map("revoked_at")
+  userAgent String?   @map("user_agent")
+  ip        String?
+  /// contexto ativo quando o token foi emitido (mode/tenantId) - mantido no refresh
+  context   Json?
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+/// Token pessoal (PAT) - usado pelo MASTER para conectar o Claude via MCP.
+model ApiToken {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @map("user_id") @db.Uuid
+  name       String
+  prefix     String /// primeiros caracteres, para identificar o token na UI
+  tokenHash  String    @unique @map("token_hash")
+  scopes     String[]  @default([])
+  lastUsedAt DateTime? @map("last_used_at")
+  expiresAt  DateTime? @map("expires_at")
+  revokedAt  DateTime? @map("revoked_at")
+  createdAt  DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("api_tokens")
+}
+
+model DeviceToken {
+  id        String         @id @default(uuid()) @db.Uuid
+  userId    String         @map("user_id") @db.Uuid
+  platform  DevicePlatform
+  token     String         @unique
+  createdAt DateTime       @default(now()) @map("created_at")
+  updatedAt DateTime       @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("device_tokens")
+}
+
+/// Convite de empresa e redefinição de senha (link enviado por e-mail).
+model OneTimeToken {
+  tokenHash String              @id @map("token_hash")
+  userId    String              @map("user_id") @db.Uuid
+  purpose   OneTimeTokenPurpose
+  tenantId  String?             @map("tenant_id") @db.Uuid
+  expiresAt DateTime            @map("expires_at")
+  usedAt    DateTime?           @map("used_at")
+  createdAt DateTime            @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, purpose])
+  @@map("one_time_tokens")
+}
+
+// -----------------------------------------------------------------------------
+// TENANTS (EMPRESAS B2B / ÓRGÃOS B2G)
+// -----------------------------------------------------------------------------
+
+model Tenant {
+  id              String       @id @default(uuid()) @db.Uuid
+  type            TenantType   @default(B2B)
+  legalName       String       @map("legal_name")
+  tradeName       String       @map("trade_name")
+  document        String?      @unique /// CNPJ
+  joinCode        String       @unique @map("join_code") /// ex.: ORBITA-2026
+  status          TenantStatus @default(ACTIVE)
+  contactName     String?      @map("contact_name")
+  contactEmail    String?      @map("contact_email")
+  contactPhone    String?      @map("contact_phone")
+  logoUrl         String?      @map("logo_url")
+  initials        String?
+  color           String?      @default("#2ec4b6")
+  planLabel       String?      @default("Anual") @map("plan_label") /// "Anual", "Semestral"...
+  /// cliente no Asaas (cobrança do contrato B2B/B2G)
+  asaasCustomerId String?      @unique @map("asaas_customer_id")
+  /// Campos específicos de B2G (processo licitatório, nº de contrato, órgão...).
+  /// Mantido flexível até o modelo B2G ser detalhado.
+  govDetails      Json?        @map("gov_details")
+  createdAt       DateTime     @default(now()) @map("created_at")
+  updatedAt       DateTime     @updatedAt @map("updated_at")
+  deletedAt       DateTime?    @map("deleted_at")
+
+  settings      TenantSettings?
+  departments   Department[]
+  memberships   Membership[]
+  planetAccess  TenantPlanetAccess[]
+  assignments   Assignment[]
+  subscriptions Subscription[]
+  payments      Payment[]
+  certificates  Certificate[]
+  templates     CertificateTemplate[]
+  examAttempts  ExamAttempt[]
+  activity      ActivityEvent[]
+
+  @@map("tenants")
+}
+
+/// Parametrização por cliente (feita pelo MASTER; parte editável pelo ADMIN).
+model TenantSettings {
+  tenantId              String    @id @map("tenant_id") @db.Uuid
+  /// licenças de COLABORADOR-CLIENTE (definidas pelo MASTER). 0 = sem limite
+  maxCollaborators      Int       @default(50) @map("max_users")
+  /// licenças de ADMIN-CLIENTE (definidas pelo MASTER). 0 = sem limite
+  maxAdmins             Int       @default(2) @map("max_admins")
+  passingScore          Int       @default(80) @map("passing_score") /// média mínima (%) na certificação
+  maxExamAttempts       Int       @default(3) @map("max_exam_attempts") /// 0 = ilimitado
+  examRetryCooldownHrs  Int       @default(24) @map("exam_retry_cooldown_hrs")
+  enforceSequentialFlow Boolean   @default(true) @map("enforce_sequential_flow")
+  /// Colaboradores da empresa ganham acesso premium enquanto vinculados?
+  grantsPremiumAccess   Boolean   @default(true) @map("grants_premium_access")
+  contractStart         DateTime? @map("contract_start")
+  contractEnd           DateTime? @map("contract_end")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@map("tenant_settings")
+}
+
+model Department {
+  id          String   @id @default(uuid()) @db.Uuid
+  tenantId    String   @map("tenant_id") @db.Uuid
+  name        String
+  description String?
+  parentId    String?  @map("parent_id") @db.Uuid
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  tenant       Tenant                   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  parent       Department?              @relation("DepartmentTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children     Department[]             @relation("DepartmentTree")
+  members      MembershipDepartment[]
+  planetAccess TenantPlanetDepartment[]
+  assignments  Assignment[]
+
+  @@unique([tenantId, name])
+  @@index([tenantId])
+  @@map("departments")
+}
+
+/// Vínculo usuário <-> empresa. É aqui que vive o papel ADMIN/COLABORADOR.
+/// REGRA: uma pessoa só pode estar em UMA empresa (convidada ou ativa).
+model Membership {
+  id            String           @id @default(uuid()) @db.Uuid
+  userId        String           @map("user_id") @db.Uuid
+  /// = userId enquanto INVITED/ACTIVE; null quando DISABLED. O índice único
+  /// garante no banco que a pessoa não esteja em duas empresas ao mesmo tempo.
+  oneCompanyKey String?          @unique @map("one_company_key") @db.Uuid
+  tenantId      String           @map("tenant_id") @db.Uuid
+  role          TenantRole       @default(COLABORADOR_CLIENTE)
+  status        MembershipStatus @default(ACTIVE)
+  jobTitle      String?          @map("job_title")
+  invitedAt     DateTime?        @map("invited_at")
+  joinedAt      DateTime?        @map("joined_at")
+  createdAt     DateTime         @default(now()) @map("created_at")
+  updatedAt     DateTime         @updatedAt @map("updated_at")
+
+  user        User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenant      Tenant                 @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  departments MembershipDepartment[]
+  assignments Assignment[]
+
+  @@unique([userId, tenantId])
+  @@index([tenantId, role])
+  @@map("memberships")
+}
+
+model MembershipDepartment {
+  membershipId String @map("membership_id") @db.Uuid
+  departmentId String @map("department_id") @db.Uuid
+
+  membership Membership @relation(fields: [membershipId], references: [id], onDelete: Cascade)
+  department Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+
+  @@id([membershipId, departmentId])
+  @@index([departmentId])
+  @@map("membership_departments")
+}
+
+// -----------------------------------------------------------------------------
+// CONTEÚDO (global, gerido pelo MASTER-FOLKS / Claude via MCP)
+// -----------------------------------------------------------------------------
+
+/// Metodologia de prática (menu Metodologia do MASTER, ADR 0013). O `code` é o `methodology` das questões.
+model Methodology {
+  id                 String            @id @default(uuid()) @db.Uuid
+  code               String            @unique
+  name               String
+  description        String?
+  /// tipos de questão que desenham a metodologia (ex.: TRUE_FALSE); captura: VOICE, PHOTO, VIDEO
+  answerFormats      String[]          @map("answer_formats")
+  /// orientação ao Claude: como escrever questões desta metodologia
+  guidance           String?
+  status             MethodologyStatus @default(ACTIVE)
+  /// vem com a plataforma: pode ser editada e desligada, não excluída
+  isSystem           Boolean           @default(false) @map("is_system")
+  defaultTimeLimitMs Int?              @map("default_time_limit_ms")
+  sortOrder          Int               @default(0) @map("sort_order")
+  createdAt          DateTime          @default(now()) @map("created_at")
+  updatedAt          DateTime          @updatedAt @map("updated_at")
+
+  @@map("methodologies")
+}
+
+/// Modelo de estrutura de trilha (menu Personalização de trilha, ADR 0013).
+/// structure: { unitSteps: [{kind,min,max}], closingSteps?, closingTitle?, minUnits?, maxUnits?, exam, methodologies[] }
+model TrailTemplate {
+  id          String   @id @default(uuid()) @db.Uuid
+  code        String   @unique
+  name        String
+  description String?
+  structure   Json
+  isActive    Boolean  @default(true) @map("is_active")
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  courses Course[]
+
+  @@map("trail_templates")
+}
+
+model StudyCategory {
+  id          String   @id @default(uuid()) @db.Uuid
+  slug        String   @unique
+  name        String /// "Para a vida", "Para o trabalho", "Para a escola"
+  description String?
+  sortOrder   Int      @default(0) @map("sort_order")
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  planets   Planet[]
+  planTiers PlanTierCategory[]
+
+  @@map("study_categories")
+}
+
+model Planet {
+  id             String        @id @default(uuid()) @db.Uuid
+  categoryId     String        @map("category_id") @db.Uuid
+  slug           String        @unique
+  name           String
+  description    String?
+  themeColor     String?       @map("theme_color")
+  imageUrl       String?       @map("image_url") /// planeta
+  mascotUrl      String?       @map("mascot_url") /// astronauta temático
+  shortName      String?       @map("short_name")
+  /// visual do protótipo: cores, anel, ícone, ícones em órbita, figurino do astronauta
+  visual         Json?
+  status         ContentStatus @default(DRAFT)
+  accessTier     AccessTier    @default(PREMIUM) @map("access_tier")
+  availableB2C   Boolean       @default(true) @map("available_b2c")
+  availableB2B   Boolean       @default(true) @map("available_b2b")
+  sortOrder      Int           @default(0) @map("sort_order")
+  vimeoFolderUri String?       @map("vimeo_folder_uri")
+  certTemplateId String?       @map("cert_template_id") @db.Uuid
+  /// hash dos metadados importados (idempotência da importação)
+  contentHash    String?       @map("content_hash")
+  /// importação que criou/atualizou por último
+  sourceImportId String?       @map("source_import_id") @db.Uuid
+  createdAt      DateTime      @default(now()) @map("created_at")
+  updatedAt      DateTime      @updatedAt @map("updated_at")
+
+  category     StudyCategory        @relation(fields: [categoryId], references: [id])
+  certTemplate CertificateTemplate? @relation("PlanetTemplate", fields: [certTemplateId], references: [id], onDelete: SetNull)
+  courses      Course[]
+  tenantAccess TenantPlanetAccess[]
+  assignments  Assignment[]
+  certificates Certificate[]
+
+  @@index([categoryId, status])
+  @@map("planets")
+}
+
+model Course {
+  id               String        @id @default(uuid()) @db.Uuid
+  planetId         String        @map("planet_id") @db.Uuid
+  slug             String
+  title            String
+  description      String?
+  imageUrl         String?       @map("image_url")
+  status           ContentStatus @default(DRAFT)
+  /// null = herda do planeta
+  accessTier       AccessTier?   @map("access_tier")
+  sortOrder        Int           @default(0) @map("sort_order")
+  estimatedMinutes Int?          @map("estimated_minutes")
+  hasCertificate   Boolean       @default(true) @map("has_certificate")
+  certTemplateId   String?       @map("cert_template_id") @db.Uuid
+  /// id estável vindo do catálogo (ex.: "tabuada", "feedback-0")
+  code             String?       @unique
+  /// hash da trilha importada: reimportar igual = nada muda
+  contentHash      String?       @map("content_hash")
+  sourceImportId   String?       @map("source_import_id") @db.Uuid
+  icon             String?
+  meta             String? /// "4 unidades · 17 etapas · 2 grátis"
+  /// nome do treino na prática infinita (ex.: "Treino de tabuada")
+  drillLabel       String?       @map("drill_label")
+  /// insígnia ao concluir: { icon, name, text } (cursos sem certificado)
+  badge            Json?
+  /// curso que é um jogo (ex.: "campo" = Campo Harmônico)
+  gameId           String?       @map("game_id")
+  gameUrl          String?       @map("game_url")
+  /// ex.: { "masteryKeys": ["C","G",...] } - progresso = dominados / total
+  gameConfig       Json?         @map("game_config")
+  /// modelo de trilha que o curso segue (menu Personalização de trilha)
+  trailTemplateId  String?       @map("trail_template_id") @db.Uuid
+  createdAt        DateTime      @default(now()) @map("created_at")
+  updatedAt        DateTime      @updatedAt @map("updated_at")
+
+  planet        Planet               @relation(fields: [planetId], references: [id], onDelete: Cascade)
+  trailTemplate TrailTemplate?       @relation(fields: [trailTemplateId], references: [id], onDelete: SetNull)
+  certTemplate  CertificateTemplate? @relation("CourseTemplate", fields: [certTemplateId], references: [id], onDelete: SetNull)
+  units         Unit[]
+  exam          Exam?
+  enrollments   Enrollment[]
+  assignments   Assignment[]
+  certificates  Certificate[]
+  userBadges    UserBadge[]
+
+  @@unique([planetId, slug])
+  @@index([planetId, status])
+  @@map("courses")
+}
+
+model Unit {
+  id          String      @id @default(uuid()) @db.Uuid
+  courseId    String      @map("course_id") @db.Uuid
+  title       String
+  description String?
+  themeColor  String?     @map("theme_color")
+  sortOrder   Int         @default(0) @map("sort_order")
+  /// null = herda do curso. Plano grátis: unidades 1-2 FREE, 3+ PREMIUM.
+  accessTier  AccessTier? @map("access_tier")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  course  Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons Lesson[]
+
+  @@index([courseId])
+  @@map("units")
+}
+
+/// Uma etapa da trilha: vídeo, prática (quiz ligado ao vídeo) ou interativo.
+model Lesson {
+  id                   String         @id @default(uuid()) @db.Uuid
+  unitId               String         @map("unit_id") @db.Uuid
+  type                 LessonType
+  title                String
+  description          String?
+  sortOrder            Int            @default(0) @map("sort_order")
+  xpReward             Int            @default(10) @map("xp_reward")
+  /// id estável da etapa no catálogo (ex.: "u1a")
+  code                 String?
+  // ---- LESSON ("aula"): { slides: [{ heading, text, visualHtml, audioDemos }], generators }
+  content              Json?
+  // ---- PRACTICE gerada no app
+  questionSource       QuestionSource @default(BANK) @map("question_source")
+  generators           String[]       @default([])
+  /// geradores com os dados de cada um: [{ methodology, data }] (prática infinita)
+  generatorSpecs       Json?          @map("generator_specs")
+  /// PRACTICE do banco: questões por rodada; GENERATED: total de exercícios
+  questionCount        Int?           @map("question_count")
+  isReview             Boolean        @default(false) @map("is_review")
+  // ---- VIDEO (Vimeo)
+  vimeoVideoId         String?        @map("vimeo_video_id")
+  vimeoUrl             String?        @map("vimeo_url")
+  vimeoHash            String?        @map("vimeo_hash") /// h= de vídeos não listados
+  durationSeconds      Int?           @map("duration_seconds")
+  /// % mínima assistida para considerar o vídeo concluído
+  minWatchPct          Int            @default(90) @map("min_watch_pct")
+  videoTitle           String?        @map("video_title")
+  thumbnailUrl         String?        @map("thumbnail_url")
+  /// última sincronização com o Vimeo (duração, miniatura, hash)
+  vimeoSyncedAt        DateTime?      @map("vimeo_synced_at")
+  // ---- PRACTICE: vídeo ao qual a prática se refere
+  relatedLessonId      String?        @map("related_lesson_id") @db.Uuid
+  passingPct           Int            @default(0) @map("passing_pct") /// 0 = só concluir
+  // ---- INTERACTIVE (SCORM / xAPI / cmi5)
+  interactivePackageId String?        @map("interactive_package_id") @db.Uuid
+  createdAt            DateTime       @default(now()) @map("created_at")
+  updatedAt            DateTime       @updatedAt @map("updated_at")
+
+  unit               Unit                @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  relatedLesson      Lesson?             @relation("PracticeOfVideo", fields: [relatedLessonId], references: [id], onDelete: SetNull)
+  practices          Lesson[]            @relation("PracticeOfVideo")
+  interactivePackage InteractivePackage? @relation(fields: [interactivePackageId], references: [id], onDelete: SetNull)
+  questions          Question[]
+  progress           LessonProgress[]
+  practiceAttempts   PracticeAttempt[]
+  scormStates        ScormRuntimeState[]
+
+  @@index([unitId])
+  @@map("lessons")
+}
+
+/// Questão de prática (lessonId) ou da certificação (examId).
+model Question {
+  id          String       @id @default(uuid()) @db.Uuid
+  lessonId    String?      @map("lesson_id") @db.Uuid
+  examId      String?      @map("exam_id") @db.Uuid
+  type        QuestionType @default(SINGLE_CHOICE)
+  prompt      String
+  explanation String?
+  mediaUrl    String?      @map("media_url")
+  /// formato/gerador de origem (ex.: "calc_number", "listen_choose")
+  methodology String?
+  timeLimitMs Int?         @map("time_limit_ms")
+  /// campos do tipo (resposta, peças, pares, grupos, simulador). Nunca vai para o aluno sem passar por publicQuestion.
+  data        Json?
+  /// { visual, visualAfterAnswer, audio: { kind: "TTS", lang, text }, speakAfterAnswer }
+  media       Json?
+  points      Int          @default(1)
+  sortOrder   Int          @default(0) @map("sort_order")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  lesson  Lesson?          @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  exam    Exam?            @relation(fields: [examId], references: [id], onDelete: Cascade)
+  options QuestionOption[]
+
+  @@index([lessonId])
+  @@index([examId])
+  @@map("questions")
+}
+
+model QuestionOption {
+  id         String  @id @default(uuid()) @db.Uuid
+  questionId String  @map("question_id") @db.Uuid
+  text       String
+  isCorrect  Boolean @default(false) @map("is_correct")
+  feedback   String?
+  sortOrder  Int     @default(0) @map("sort_order")
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@index([questionId])
+  @@map("question_options")
+}
+
+/// Certificação: prova final do curso.
+model Exam {
+  id               String         @id @default(uuid()) @db.Uuid
+  courseId         String         @unique @map("course_id") @db.Uuid
+  title            String
+  instructions     String?
+  timeLimitMinutes Int?           @map("time_limit_minutes")
+  /// Quantas questões sortear do banco (null = todas)
+  questionCount    Int?           @map("question_count")
+  shuffle          Boolean        @default(true)
+  /// Sobrescreve a média da empresa/plataforma (null = usa configuração)
+  passingScore     Int?           @map("passing_score")
+  /// BANK = questões do banco; GENERATED = geradas no app a partir de "generators"
+  questionSource   QuestionSource @default(BANK) @map("question_source")
+  generators       String[]       @default([])
+  createdAt        DateTime       @default(now()) @map("created_at")
+  updatedAt        DateTime       @updatedAt @map("updated_at")
+
+  course    Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  questions Question[]
+  attempts  ExamAttempt[]
+
+  @@map("exams")
+}
+
+// -----------------------------------------------------------------------------
+// CONTEÚDO INTERATIVO (SCORM 1.2 / 2004, xAPI, cmi5)
+// -----------------------------------------------------------------------------
+
+model InteractivePackage {
+  id           String              @id @default(uuid()) @db.Uuid
+  title        String
+  standard     InteractiveStandard
+  /// IRI da atividade raiz (xAPI/cmi5) ou identifier do manifest (SCORM)
+  activityId   String?             @map("activity_id")
+  storagePath  String              @map("storage_path")
+  launchPath   String              @map("launch_path")
+  manifest     Json?
+  version      Int                 @default(1)
+  uploadedById String?             @map("uploaded_by_id") @db.Uuid
+  createdAt    DateTime            @default(now()) @map("created_at")
+
+  lessons     Lesson[]
+  scormStates ScormRuntimeState[]
+
+  @@map("interactive_packages")
+}
+
+/// Estado do runtime SCORM (cmi.*) por aluno/lição.
+model ScormRuntimeState {
+  id               String   @id @default(uuid()) @db.Uuid
+  userId           String   @map("user_id") @db.Uuid
+  lessonId         String   @map("lesson_id") @db.Uuid
+  packageId        String   @map("package_id") @db.Uuid
+  cmi              Json     @default("{}")
+  completionStatus String?  @map("completion_status")
+  successStatus    String?  @map("success_status")
+  scoreScaled      Float?   @map("score_scaled")
+  totalTimeSeconds Int      @default(0) @map("total_time_seconds")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  user    User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson  Lesson             @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  package InteractivePackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId, packageId])
+  @@map("scorm_runtime_states")
+}
+
+/// LRS (Learning Record Store) embutido - statements xAPI / cmi5.
+model XapiStatement {
+  id               String   @id @db.Uuid /// statement.id
+  userId           String?  @map("user_id") @db.Uuid
+  lessonId         String?  @map("lesson_id") @db.Uuid
+  registration     String?  @db.Uuid
+  verbId           String   @map("verb_id")
+  activityId       String   @map("activity_id")
+  resultCompletion Boolean? @map("result_completion")
+  resultSuccess    Boolean? @map("result_success")
+  resultScore      Float?   @map("result_score") /// scaled 0..1
+  statement        Json
+  voided           Boolean  @default(false)
+  timestamp        DateTime
+  stored           DateTime @default(now())
+
+  @@index([userId, activityId])
+  @@index([registration])
+  @@index([verbId])
+  @@map("xapi_statements")
+}
+
+/// Document APIs do xAPI (State / Activity Profile / Agent Profile).
+model XapiDocument {
+  id           String   @id @default(uuid()) @db.Uuid
+  kind         String /// state | activity_profile | agent_profile
+  activityId   String?  @map("activity_id")
+  agentKey     String?  @map("agent_key")
+  registration String?
+  documentId   String   @map("document_id")
+  contentType  String   @default("application/json") @map("content_type")
+  contents     Bytes
+  etag         String
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@unique([kind, activityId, agentKey, registration, documentId])
+  @@map("xapi_documents")
+}
+
+// -----------------------------------------------------------------------------
+// CATÁLOGO DO TENANT (o que cada empresa libera / prioriza)
+// -----------------------------------------------------------------------------
+
+/// Toggle do planeta para a empresa + filtro de setores (print com chips).
+model TenantPlanetAccess {
+  id             String   @id @default(uuid()) @db.Uuid
+  tenantId       String   @map("tenant_id") @db.Uuid
+  planetId       String   @map("planet_id") @db.Uuid
+  enabled        Boolean  @default(true)
+  allDepartments Boolean  @default(true) @map("all_departments")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  tenant      Tenant                   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  planet      Planet                   @relation(fields: [planetId], references: [id], onDelete: Cascade)
+  departments TenantPlanetDepartment[]
+
+  @@unique([tenantId, planetId])
+  @@map("tenant_planet_access")
+}
+
+model TenantPlanetDepartment {
+  accessId     String @map("access_id") @db.Uuid
+  departmentId String @map("department_id") @db.Uuid
+
+  access     TenantPlanetAccess @relation(fields: [accessId], references: [id], onDelete: Cascade)
+  department Department         @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+
+  @@id([accessId, departmentId])
+  @@map("tenant_planet_departments")
+}
+
+/// Trilha obrigatória / prioridade / prazo definida pelo ADMIN-CLIENTE.
+/// Alvo: um departamento, um colaborador específico ou a empresa toda.
+model Assignment {
+  id           String           @id @default(uuid()) @db.Uuid
+  tenantId     String           @map("tenant_id") @db.Uuid
+  targetType   AssignmentTarget @map("target_type")
+  planetId     String?          @map("planet_id") @db.Uuid
+  courseId     String?          @map("course_id") @db.Uuid
+  departmentId String?          @map("department_id") @db.Uuid
+  membershipId String?          @map("membership_id") @db.Uuid
+  mandatory    Boolean          @default(false)
+  /// menor = vem primeiro
+  priority     Int              @default(100)
+  startsAt     DateTime?        @map("starts_at")
+  dueDate      DateTime?        @map("due_date")
+  createdById  String?          @map("created_by_id") @db.Uuid
+  createdAt    DateTime         @default(now()) @map("created_at")
+  updatedAt    DateTime         @updatedAt @map("updated_at")
+
+  tenant     Tenant      @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  planet     Planet?     @relation(fields: [planetId], references: [id], onDelete: Cascade)
+  course     Course?     @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  department Department? @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  membership Membership? @relation(fields: [membershipId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([departmentId])
+  @@index([membershipId])
+  @@map("assignments")
+}
+
+// -----------------------------------------------------------------------------
+// PROGRESSO
+//  O progresso é da PESSOA (não duplica entre modo B2B e B2C). Os dashboards
+//  da empresa só enxergam conteúdo liberado/atribuído por ela.
+// -----------------------------------------------------------------------------
+
+model Enrollment {
+  id           String         @id @default(uuid()) @db.Uuid
+  userId       String         @map("user_id") @db.Uuid
+  courseId     String         @map("course_id") @db.Uuid
+  status       ProgressStatus @default(IN_PROGRESS)
+  progressPct  Int            @default(0) @map("progress_pct")
+  lastLessonId String?        @map("last_lesson_id") @db.Uuid
+  startedAt    DateTime       @default(now()) @map("started_at")
+  completedAt  DateTime?      @map("completed_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([courseId, status])
+  @@map("enrollments")
+}
+
+model LessonProgress {
+  id             String         @id @default(uuid()) @db.Uuid
+  userId         String         @map("user_id") @db.Uuid
+  lessonId       String         @map("lesson_id") @db.Uuid
+  status         ProgressStatus @default(IN_PROGRESS)
+  watchedSeconds Int            @default(0) @map("watched_seconds")
+  bestScorePct   Int?           @map("best_score_pct")
+  attempts       Int            @default(0)
+  completedAt    DateTime?      @map("completed_at")
+  createdAt      DateTime       @default(now()) @map("created_at")
+  updatedAt      DateTime       @updatedAt @map("updated_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@index([lessonId, status])
+  @@map("lesson_progress")
+}
+
+model PracticeAttempt {
+  id           String       @id @default(uuid()) @db.Uuid
+  userId       String       @map("user_id") @db.Uuid
+  lessonId     String?      @map("lesson_id") @db.Uuid /// null = prática infinita
+  courseId     String?      @map("course_id") @db.Uuid
+  mode         PracticeMode @default(LESSON)
+  correctCount Int          @map("correct_count")
+  totalCount   Int          @map("total_count")
+  scorePct     Int          @map("score_pct")
+  xpEarned     Int          @default(0) @map("xp_earned")
+  answers      Json
+  createdAt    DateTime     @default(now()) @map("created_at")
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson Lesson? @relation(fields: [lessonId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+  @@map("practice_attempts")
+}
+
+model ExamAttempt {
+  id                  String    @id @default(uuid()) @db.Uuid
+  userId              String    @map("user_id") @db.Uuid
+  examId              String    @map("exam_id") @db.Uuid
+  /// contexto em que a prova foi feita (define a média exigida)
+  tenantId            String?   @map("tenant_id") @db.Uuid
+  questionIds         String[]  @map("question_ids")
+  answers             Json?
+  scorePct            Int?      @map("score_pct")
+  passingScoreApplied Int       @map("passing_score_applied")
+  passed              Boolean?
+  startedAt           DateTime  @default(now()) @map("started_at")
+  expiresAt           DateTime? @map("expires_at")
+  submittedAt         DateTime? @map("submitted_at")
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam   Exam    @relation(fields: [examId], references: [id], onDelete: Cascade)
+  tenant Tenant? @relation(fields: [tenantId], references: [id], onDelete: SetNull)
+
+  @@index([userId, examId])
+  @@index([tenantId])
+  @@map("exam_attempts")
+}
+
+// -----------------------------------------------------------------------------
+// CERTIFICADOS
+// -----------------------------------------------------------------------------
+
+model CertificateTemplate {
+  id        String          @id @default(uuid()) @db.Uuid
+  /// null = template global da Folks; preenchido = template da empresa
+  tenantId  String?         @map("tenant_id") @db.Uuid
+  type      CertificateType
+  name      String
+  /// HTML com placeholders {{studentName}}, {{courseTitle}}, {{planetName}},
+  /// {{courseList}}, {{issuedAt}}, {{code}}, {{scorePct}}, {{tenantName}}
+  html      String
+  /// Layout opcional (imagem de fundo, posições) para o editor visual
+  layout    Json?
+  isDefault Boolean         @default(false) @map("is_default")
+  createdAt DateTime        @default(now()) @map("created_at")
+  updatedAt DateTime        @updatedAt @map("updated_at")
+
+  tenant       Tenant?       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  planets      Planet[]      @relation("PlanetTemplate")
+  courses      Course[]      @relation("CourseTemplate")
+  certificates Certificate[]
+
+  @@index([tenantId, type])
+  @@map("certificate_templates")
+}
+
+model Certificate {
+  id                String          @id @default(uuid()) @db.Uuid
+  /// código público de verificação
+  code              String          @unique
+  userId            String          @map("user_id") @db.Uuid
+  type              CertificateType
+  courseId          String?         @map("course_id") @db.Uuid
+  planetId          String?         @map("planet_id") @db.Uuid
+  tenantId          String?         @map("tenant_id") @db.Uuid
+  templateId        String?         @map("template_id") @db.Uuid
+  scorePct          Int?            @map("score_pct")
+  /// nome escolhido pelo aluno para sair no certificado (definido uma vez)
+  nameOnCertificate String?         @map("name_on_certificate")
+  /// snapshot dos dados (nome do aluno, cursos que compõem o planeta etc.)
+  data              Json
+  issuedAt          DateTime        @default(now()) @map("issued_at")
+  revokedAt         DateTime?       @map("revoked_at")
+
+  user     User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course   Course?              @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  planet   Planet?              @relation(fields: [planetId], references: [id], onDelete: SetNull)
+  tenant   Tenant?              @relation(fields: [tenantId], references: [id], onDelete: SetNull)
+  template CertificateTemplate? @relation(fields: [templateId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([tenantId])
+  @@map("certificates")
+}
+
+// -----------------------------------------------------------------------------
+// GAMIFICAÇÃO (XP, níveis, jornada/streak, meta diária, Hangar)
+// -----------------------------------------------------------------------------
+
+model UserGamification {
+  userId           String    @id @map("user_id") @db.Uuid
+  totalXp          Int       @default(0) @map("total_xp")
+  level            Int       @default(1)
+  currentStreak    Int       @default(0) @map("current_streak")
+  longestStreak    Int       @default(0) @map("longest_streak")
+  lastActivityDate DateTime? @map("last_activity_date") @db.Date
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_gamification")
+}
+
+model XpEvent {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  amount    Int
+  source    XpSource
+  refId     String?  @map("ref_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@map("xp_events")
+}
+
+model DailyActivity {
+  userId String   @map("user_id") @db.Uuid
+  date   DateTime @db.Date
+  xp     Int      @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, date])
+  @@map("daily_activity")
+}
+
+model AvatarItem {
+  id            String     @id @default(uuid()) @db.Uuid
+  slot          AvatarSlot
+  /// chave usada pelo app (ex.: "branco", "jetpack")
+  key           String
+  name          String /// "Branco", "Cinza-lua", "Grafite"...
+  colorHex      String?    @map("color_hex")
+  assetUrl      String?    @map("asset_url")
+  requiredLevel Int        @default(1) @map("required_level")
+  premiumOnly   Boolean    @default(false) @map("premium_only")
+  isDefault     Boolean    @default(false) @map("is_default")
+  sortOrder     Int        @default(0) @map("sort_order")
+
+  equippedBy UserAvatarItem[]
+
+  @@unique([slot, key])
+  @@map("avatar_items")
+}
+
+model UserAvatarItem {
+  userId String     @map("user_id") @db.Uuid
+  slot   AvatarSlot
+  itemId String     @map("item_id") @db.Uuid
+
+  user User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item AvatarItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@id([userId, slot])
+  @@map("user_avatar_items")
+}
+
+// -----------------------------------------------------------------------------
+// FINANCEIRO
+// -----------------------------------------------------------------------------
+
+model Plan {
+  id              String          @id @default(uuid()) @db.Uuid
+  code            String          @unique
+  name            String
+  description     String?
+  audience        PlanAudience
+  interval        BillingInterval
+  priceCents      Int             @map("price_cents")
+  currency        String          @default("BRL")
+  trialDays       Int             @default(0) @map("trial_days")
+  isActive        Boolean         @default(true) @map("is_active")
+  appleProductId  String?         @unique @map("apple_product_id")
+  googleProductId String?         @unique @map("google_product_id")
+  webPriceId      String?         @map("web_price_id")
+  /// plano de acesso (Básico, Premium, Premium Plus) que este preço libera. null = libera tudo (comportamento antigo)
+  tierId          String?         @map("tier_id") @db.Uuid
+  createdAt       DateTime        @default(now()) @map("created_at")
+  updatedAt       DateTime        @updatedAt @map("updated_at")
+
+  tier          PlanTier?      @relation(fields: [tierId], references: [id], onDelete: SetNull)
+  subscriptions Subscription[]
+
+  @@map("plans")
+}
+
+/// Plano de acesso do aluno (B2C): Básico, Premium, Premium Plus. Define quais galáxias
+/// (StudyCategory) têm o conteúdo Premium liberado. O conteúdo grátis vale para todos.
+/// Os preços (Plan: mensal, anual, lojas) apontam para um plano de acesso.
+model PlanTier {
+  id                    String   @id @default(uuid()) @db.Uuid
+  code                  String   @unique
+  name                  String
+  description           String?
+  /// plano de quem não tem assinatura (exatamente um)
+  isDefault             Boolean  @default(false) @map("is_default")
+  /// inclui todas as galáxias, inclusive as criadas depois
+  includesAllCategories Boolean  @default(false) @map("includes_all_categories")
+  isActive              Boolean  @default(true) @map("is_active")
+  sortOrder             Int      @default(0) @map("sort_order")
+  createdAt             DateTime @default(now()) @map("created_at")
+  updatedAt             DateTime @updatedAt @map("updated_at")
+
+  categories PlanTierCategory[]
+  plans      Plan[]
+
+  @@map("plan_tiers")
+}
+
+model PlanTierCategory {
+  tierId     String @map("tier_id") @db.Uuid
+  categoryId String @map("category_id") @db.Uuid
+
+  tier     PlanTier      @relation(fields: [tierId], references: [id], onDelete: Cascade)
+  category StudyCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([tierId, categoryId])
+  @@index([categoryId])
+  @@map("plan_tier_categories")
+}
+
+/// B2C: userId preenchido. B2B/B2G: tenantId preenchido (contrato da empresa).
+model Subscription {
+  id                     String             @id @default(uuid()) @db.Uuid
+  userId                 String?            @map("user_id") @db.Uuid
+  tenantId               String?            @map("tenant_id") @db.Uuid
+  planId                 String             @map("plan_id") @db.Uuid
+  status                 SubscriptionStatus
+  provider               PaymentProvider
+  providerSubscriptionId String?            @map("provider_subscription_id")
+  seats                  Int?
+  /// valor cobrado por ciclo quando difere do preço do plano (ex.: contrato negociado da empresa)
+  amountCents            Int?               @map("amount_cents")
+  currentPeriodStart     DateTime           @map("current_period_start")
+  currentPeriodEnd       DateTime           @map("current_period_end")
+  cancelAtPeriodEnd      Boolean            @default(false) @map("cancel_at_period_end")
+  canceledAt             DateTime?          @map("canceled_at")
+  createdAt              DateTime           @default(now()) @map("created_at")
+  updatedAt              DateTime           @updatedAt @map("updated_at")
+
+  user     User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenant   Tenant?   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  plan     Plan      @relation(fields: [planId], references: [id])
+  payments Payment[]
+
+  @@unique([provider, providerSubscriptionId])
+  @@index([userId, status])
+  @@index([tenantId, status])
+  @@map("subscriptions")
+}
+
+model Payment {
+  id                String          @id @default(uuid()) @db.Uuid
+  subscriptionId    String?         @map("subscription_id") @db.Uuid
+  userId            String?         @map("user_id") @db.Uuid
+  tenantId          String?         @map("tenant_id") @db.Uuid
+  amountCents       Int             @map("amount_cents")
+  currency          String          @default("BRL")
+  status            PaymentStatus
+  provider          PaymentProvider
+  providerPaymentId String?         @map("provider_payment_id")
+  description       String?
+  paidAt            DateTime?       @map("paid_at")
+  raw               Json?
+  createdAt         DateTime        @default(now()) @map("created_at")
+
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+  user         User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tenant       Tenant?       @relation(fields: [tenantId], references: [id], onDelete: SetNull)
+
+  @@unique([provider, providerPaymentId])
+  @@index([tenantId, status])
+  @@index([userId, status])
+  @@index([paidAt])
+  @@map("payments")
+}
+
+model WebhookEvent {
+  id          String          @id @default(uuid()) @db.Uuid
+  provider    PaymentProvider
+  externalId  String          @map("external_id")
+  type        String?
+  payload     Json
+  processedAt DateTime?       @map("processed_at")
+  error       String?
+  createdAt   DateTime        @default(now()) @map("created_at")
+
+  @@unique([provider, externalId])
+  @@map("webhook_events")
+}
+
+// -----------------------------------------------------------------------------
+// PLATAFORMA
+// -----------------------------------------------------------------------------
+
+/// Configurações gerais (MASTER > Configurações). Ex.: default_passing_score,
+/// xp_per_level, free_trial_days...
+model PlatformSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("platform_settings")
+}
+
+model AuditLog {
+  id          String   @id @default(uuid()) @db.Uuid
+  actorUserId String?  @map("actor_user_id") @db.Uuid
+  tenantId    String?  @map("tenant_id") @db.Uuid
+  action      String
+  entity      String
+  entityId    String?  @map("entity_id")
+  data        Json?
+  via         String   @default("api") /// api | mcp | system
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([tenantId, createdAt])
+  @@index([entity, entityId])
+  @@map("audit_logs")
+}
+
+// -----------------------------------------------------------------------------
+// ENGAJAMENTO, PLANO GRÁTIS E ESTADOS DO APP (vindos do protótipo)
+// -----------------------------------------------------------------------------
+
+/// Toda lição/prática/prova/jogo concluído vira um evento. É a base do
+/// ENGAJAMENTO (pessoa engajada no dia = ao menos 1 evento, fuso de São Paulo).
+model ActivityEvent {
+  id        String       @id @default(uuid()) @db.Uuid
+  userId    String       @map("user_id") @db.Uuid
+  /// empresa em que a pessoa estava (contexto TENANT) no momento
+  tenantId  String?      @map("tenant_id") @db.Uuid
+  kind      ActivityKind
+  courseId  String?      @map("course_id") @db.Uuid
+  lessonId  String?      @map("lesson_id") @db.Uuid
+  correct   Int?
+  total     Int?
+  xp        Int          @default(0)
+  day       DateTime     @db.Date
+  createdAt DateTime     @default(now()) @map("created_at")
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenant Tenant? @relation(fields: [tenantId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId, day])
+  @@index([day])
+  @@index([userId, day])
+  @@map("activity_events")
+}
+
+/// Limites diários do plano grátis (prática infinita e jam). bonus = rodadas
+/// extras ganhas assistindo anúncio com recompensa.
+model DailyAllowance {
+  userId  String           @map("user_id") @db.Uuid
+  day     DateTime         @db.Date
+  feature AllowanceFeature
+  used    Int              @default(0)
+  bonus   Int              @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, day, feature])
+  @@map("daily_allowances")
+}
+
+/// Idempotência da verificação server-side (SSV) do AdMob.
+model AdReward {
+  transactionId String           @id @map("transaction_id")
+  userId        String           @map("user_id") @db.Uuid
+  feature       AllowanceFeature
+  createdAt     DateTime         @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("ad_rewards")
+}
+
+/// Recorde da prática infinita por curso ("Novo recorde!").
+model InfiniteRecord {
+  userId        String @map("user_id") @db.Uuid
+  courseId      String @map("course_id") @db.Uuid
+  bestRun       Int    @default(0) @map("best_run")
+  totalAnswered Int    @default(0) @map("total_answered")
+  sessions      Int    @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, courseId])
+  @@map("infinite_records")
+}
+
+/// Estado livre de um curso no aparelho (ex.: cartas da tabuada com nível e revisão).
+model CourseState {
+  userId    String   @map("user_id") @db.Uuid
+  courseId  String   @map("course_id") @db.Uuid
+  state     Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, courseId])
+  @@map("course_states")
+}
+
+/// Estado de jogos (ex.: "campo" = Campo Harmônico).
+model GameState {
+  userId    String   @map("user_id") @db.Uuid
+  gameId    String   @map("game_id")
+  state     Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, gameId])
+  @@map("game_states")
+}
+
+/// Insígnia conquistada ao concluir um curso (ex.: "Tabuada na Cabeça").
+model UserBadge {
+  userId   String   @map("user_id") @db.Uuid
+  courseId String   @map("course_id") @db.Uuid
+  earnedAt DateTime @default(now()) @map("earned_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@id([userId, courseId])
+  @@map("user_badges")
+}
+
+// -----------------------------------------------------------------------------
+// IMPORTAÇÃO DE CONTEÚDO (conteúdo gerado no Claude -> banco)
+// -----------------------------------------------------------------------------
+
+enum ContentImportStatus {
+  VALIDATED /// sem erros: pronto para gravar
+  INVALID /// tem erros: corrigir (editar o JSON normalizado) antes de gravar
+  APPLYING /// gravando (trava contra gravação dupla)
+  APPLIED /// gravado
+  PARTIAL /// parte dos planetas gravada (os demais têm erro/conflito)
+  FAILED /// a gravação falhou (nada foi gravado)
+  DISCARDED
+}
+
+/// Área de preparação: guarda o conteúdo bruto, o normalizado (folks.content/v1),
+/// o relatório de validação, o plano e o resultado da gravação. Nada vai para as
+/// tabelas de conteúdo sem passar por aqui (exceto o CRUD manual do MASTER).
+model ContentImport {
+  id           String              @id @default(uuid()) @db.Uuid
+  label        String?
+  filename     String?
+  /// json | json-in-text | markdown
+  format       String
+  status       ContentImportStatus
+  /// sha256 do conteúdo bruto: detecta reenvio do mesmo material
+  payloadHash  String              @map("payload_hash")
+  rawPayload   String              @map("raw_payload")
+  /// conteúdo no formato canônico folks.content/v1 (editável pelo MASTER)
+  normalized   Json
+  issues       Json
+  stats        Json
+  plan         Json?
+  result       Json?
+  strategy     String              @default("upsert")
+  errorCount   Int                 @default(0) @map("error_count")
+  warningCount Int                 @default(0) @map("warning_count")
+  /// api | mcp
+  via          String              @default("api")
+  createdById  String              @map("created_by_id") @db.Uuid
+  appliedById  String?             @map("applied_by_id") @db.Uuid
+  appliedAt    DateTime?           @map("applied_at")
+  createdAt    DateTime            @default(now()) @map("created_at")
+  updatedAt    DateTime            @updatedAt @map("updated_at")
+
+  @@index([payloadHash])
+  @@index([status, createdAt])
+  @@map("content_imports")
+}

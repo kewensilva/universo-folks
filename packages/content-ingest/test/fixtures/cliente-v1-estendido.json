@@ -1,0 +1,1177 @@
+{
+ "schemaVersion": "folks.content/v1",
+ "planets": [
+  {
+   "key": "dinheiro",
+   "slug": "dinheiro",
+   "name": "Dinheiro",
+   "category": "para-a-vida",
+   "accessTier": "FREEMIUM",
+   "description": "Organize suas finanças e faça o dinheiro render.",
+   "courses": [
+    {
+     "key": "dinheiro.organizacao-financeira",
+     "slug": "organizacao-financeira",
+     "title": "Organização financeira",
+     "hasCertificate": false,
+     "summary": "4 unidades · simuladores · do zero",
+     "units": [
+      {
+       "title": "Para onde vai seu dinheiro",
+       "isFree": true,
+       "color": "#2fc27a",
+       "lessons": [
+        {
+         "type": "LESSON",
+         "title": "Aula com todos os widgets",
+         "slides": [
+          {
+           "heading": "Entrou, saiu",
+           "text": "Organizar começa por uma conta simples: o que entra menos o que sai.",
+           "textParts": [
+            "Organizar começa por uma conta simples: o que entra menos o que sai."
+           ],
+           "widget": {
+            "type": "SIM",
+            "sim": "saldo",
+            "moves": 3
+           },
+           "check": {
+            "type": "SINGLE_CHOICE",
+            "prompt": "Entram R$ 3.000 e saem R$ 3.200. O que acontece?",
+            "options": [
+             {
+              "text": "Faltam R$ 200",
+              "isCorrect": true,
+              "feedback": "Saiu mais do que entrou: faltam R$ 200, que viram dívida."
+             },
+             {
+              "text": "Sobram R$ 200",
+              "isCorrect": false,
+              "feedback": "Para sobrar, teria que sair menos do que entrou."
+             },
+             {
+              "text": "Fica zerado",
+              "isCorrect": false,
+              "feedback": "Zerado seria sair exatamente R$ 3.000."
+             }
+            ]
+           }
+          },
+          {
+           "heading": "Fixos e variáveis",
+           "text": "Fixo tem valor certo todo mês. Variável muda conforme você usa.",
+           "textParts": [
+            "Fixo tem valor certo todo mês. Variável muda conforme você usa."
+           ],
+           "widget": {
+            "type": "SORTG",
+            "groups": [
+             "Fixo",
+             "Variável"
+            ],
+            "items": [
+             [
+              "Aluguel",
+              0,
+              "Valor certo todo mês: fixo."
+             ],
+             [
+              "Mercado",
+              1,
+              "Muda conforme a compra: variável."
+             ],
+             [
+              "Internet",
+              0,
+              "Plano mensal: fixo."
+             ],
+             [
+              "Delivery",
+              1,
+              "Depende de quanto você pede: variável."
+             ],
+             [
+              "Parcela do carro",
+              0,
+              "Parcela tem valor certo: fixo."
+             ],
+             [
+              "Cinema",
+              1,
+              "Lazer varia: variável."
+             ]
+            ]
+           }
+          },
+          {
+           "heading": "As partes da câmera",
+           "text": "Antes do modo manual, conheça o que cada parte faz.",
+           "textParts": [
+            "Antes do modo manual, conheça o que cada parte faz."
+           ],
+           "widget": {
+            "type": "EXPLORE",
+            "art": "camera",
+            "parts": {
+             "corpo": [
+              "Corpo",
+              "Guarda o sensor, que é o “filme” digital: é ele que recebe a luz e forma a foto."
+             ],
+             "lente": [
+              "Lente",
+              "Leva a luz até o sensor. Dentro dela fica a abertura, que abre e fecha como a pupila do olho."
+             ],
+             "disparador": [
+              "Disparador",
+              "Apertar até a metade foca; apertar até o fim tira a foto."
+             ],
+             "seletor": [
+              "Seletor de modos",
+              "Auto: a câmera decide tudo. A (ou Av): você escolhe a abertura. S (ou Tv): você escolhe a velocidade. M: você escolhe tudo."
+             ],
+             "visor": [
+              "Visor",
+              "Onde você olha para enquadrar a foto."
+             ],
+             "flash": [
+              "Flash",
+              "Luz extra para lugares escuros. Usado com cuidado, porque achata a cena."
+             ],
+             "tela": [
+              "Tela",
+              "Mostra a foto e os ajustes, incluindo o fotômetro."
+             ]
+            },
+            "need": 5,
+            "image": {
+             "kind": "SVG",
+             "svg": "<svg class=\"artsvg\" viewBox=\"0 0 320 200\" role=\"img\" aria-label=\"Câmera\"> <g data-act=\"vw\" data-v=\"part:corpo\" style=\"cursor:pointer\" ><rect x=\"40\" y=\"56\" width=\"240\" height=\"120\" rx=\"18\" fill=\"#2a2b35\" /><rect x=\"40\" y=\"96\" width=\"240\" height=\"60\" fill=\"#1f2029\"/></g> <g data-act=\"vw\" data-v=\"part:visor\" style=\"cursor:pointer\" ><path d=\"M120 56 L136 30 L184 30 L200 56Z\" fill=\"#3a3c4a\" /></g> <g data-act=\"vw\" data-v=\"part:disparador\" style=\"cursor:pointer\" ><rect x=\"222\" y=\"40\" width=\"34\" height=\"14\" rx=\"6\" fill=\"#c9ccd6\" /></g> <g data-act=\"vw\" data-v=\"part:seletor\" style=\"cursor:pointer\" ><rect x=\"62\" y=\"38\" width=\"40\" height=\"16\" rx=\"6\" fill=\"#55596a\" /><text x=\"82\" y=\"50\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"800\" fill=\"#fff\" style=\"font-family:'Plus Jakarta Sans',sans-serif\">M A S</text></g> <g data-act=\"vw\" data-v=\"part:lente\" style=\"cursor:pointer\" ><circle cx=\"160\" cy=\"118\" r=\"52\" fill=\"#15161c\" /><circle cx=\"160\" cy=\"118\" r=\"38\" fill=\"#2c3550\"/><circle cx=\"160\" cy=\"118\" r=\"24\" fill=\"#3d4f80\"/><circle cx=\"150\" cy=\"106\" r=\"7\" fill=\"#fff\" opacity=\".5\"/></g> <g data-act=\"vw\" data-v=\"part:flash\" style=\"cursor:pointer\" ><rect x=\"58\" y=\"70\" width=\"34\" height=\"18\" rx=\"4\" fill=\"#dfe3ec\" /></g> <g data-act=\"vw\" data-v=\"part:tela\" style=\"cursor:pointer\" ><rect x=\"216\" y=\"80\" width=\"50\" height=\"36\" rx=\"5\" fill=\"#7fd8ff\" opacity=\".6\" /></g></svg>"
+            }
+           }
+          },
+          {
+           "heading": "Os modos",
+           "text": "O seletor decide quem manda: você ou a câmera.",
+           "textParts": [
+            "O seletor decide quem manda: você ou a câmera."
+           ],
+           "widget": {
+            "type": "MODES"
+           },
+           "check": {
+            "type": "SINGLE_CHOICE",
+            "prompt": "Em que modo você escolhe só a abertura?",
+            "options": [
+             {
+              "text": "A (Av)",
+              "isCorrect": true,
+              "feedback": "No A você escolhe a abertura e a câmera acerta a velocidade."
+             },
+             {
+              "text": "S (Tv)",
+              "isCorrect": false,
+              "feedback": "No S você escolhe a velocidade."
+             },
+             {
+              "text": "Auto",
+              "isCorrect": false,
+              "feedback": "No Auto a câmera escolhe tudo."
+             }
+            ]
+           }
+          },
+          {
+           "heading": "Comece pelas pessoas",
+           "text": "Toda frase começa por alguém. Em inglês, são estas palavras. Toque e ouça.",
+           "textParts": [
+            "Toda frase começa por alguém. Em inglês, são estas palavras. Toque e ouça."
+           ],
+           "widget": {
+            "type": "PRON"
+           },
+           "check": {
+            "type": "MATCH_PAIRS",
+            "pairs": [
+             {
+              "left": "I",
+              "right": "eu"
+             },
+             {
+              "left": "she",
+              "right": "ela"
+             },
+             {
+              "left": "we",
+              "right": "nós"
+             },
+             {
+              "left": "they",
+              "right": "eles"
+             }
+            ]
+           }
+          },
+          {
+           "heading": "O “it”",
+           "text": "It é para coisas e animais: a mesa, o carro, o cachorro. Para pessoas, he ou she.",
+           "textParts": [
+            "It é para coisas e animais: a mesa, o carro, o cachorro. Para pessoas, he ou she."
+           ],
+           "widget": {
+            "type": "PHRASE",
+            "list": [
+             [
+              "It is a car.",
+              "É um carro."
+             ],
+             [
+              "It is my dog.",
+              "É o meu cachorro."
+             ],
+             [
+              "She is my sister.",
+              "Ela é minha irmã."
+             ]
+            ]
+           },
+           "check": {
+            "type": "SINGLE_CHOICE",
+            "prompt": "Para falar do seu celular, você usa…",
+            "options": [
+             {
+              "text": "it",
+              "isCorrect": true,
+              "feedback": "Celular é coisa: it."
+             },
+             {
+              "text": "he",
+              "isCorrect": false,
+              "feedback": "He é para homem."
+             },
+             {
+              "text": "she",
+              "isCorrect": false,
+              "feedback": "She é para mulher."
+             }
+            ]
+           }
+          },
+          {
+           "heading": "Abrindo o capô",
+           "text": "Parece bobo, mas tem jeito certo.",
+           "textParts": [
+            "Parece bobo, mas tem jeito certo."
+           ],
+           "widget": {
+            "type": "STEPS",
+            "list": [
+             "Puxe a alavanca perto dos pés do motorista",
+             "Vá até a frente e procure a trava no meio",
+             "Empurre a trava e levante o capô",
+             "Prenda a haste no furo marcado"
+            ]
+           },
+           "check": {
+            "type": "SINGLE_CHOICE",
+            "prompt": "Antes de mexer no motor, ele deve estar…",
+            "options": [
+             {
+              "text": "Desligado e frio",
+              "isCorrect": true,
+              "feedback": "Motor quente queima e tem peça girando."
+             },
+             {
+              "text": "Ligado, para ver funcionando",
+              "isCorrect": false,
+              "feedback": "Ligado tem correia girando: perigo."
+             },
+             {
+              "text": "Tanto faz",
+              "isCorrect": false,
+              "feedback": "Faz diferença, e muita."
+             }
+            ]
+           }
+          },
+          {
+           "heading": "Fale do que a pessoa fez",
+           "text": "Rótulo ataca quem a pessoa é. Comportamento descreve o que ela fez. Só o segundo dá para mudar.",
+           "textParts": [
+            "Rótulo ataca quem a pessoa é. Comportamento descreve o que ela fez.",
+            "Só o segundo dá para mudar."
+           ],
+           "widget": {
+            "type": "FLIP",
+            "lab": [
+             "Rótulo",
+             "Comportamento"
+            ],
+            "list": [
+             [
+              "Você é desorganizado.",
+              "A pasta do projeto ficou sem os arquivos de março."
+             ],
+             [
+              "Você não liga para o cliente.",
+              "Você respondeu o cliente dois dias depois."
+             ],
+             [
+              "Você é grosso.",
+              "Na reunião, você cortou a fala da Ana três vezes."
+             ]
+            ]
+           },
+           "check": {
+            "type": "SINGLE_CHOICE",
+            "prompt": "Qual destas é sobre comportamento?",
+            "options": [
+             {
+              "text": "Você chegou 40 minutos depois do início.",
+              "isCorrect": true,
+              "feedback": "É um fato: dá para ver e medir."
+             },
+             {
+              "text": "Você é irresponsável.",
+              "isCorrect": false,
+              "feedback": "“Irresponsável” é rótulo."
+             },
+             {
+              "text": "Você não se importa com o time.",
+              "isCorrect": false,
+              "feedback": "Isso é suposição sobre o que a pessoa sente."
+             }
+            ]
+           }
+          },
+          {
+           "heading": "Agora é com você",
+           "text": "Pense em alguém que merece um feedback, de elogio ou de ajuste. Monte o seu SCI.",
+           "textParts": [
+            "Pense em alguém que merece um feedback, de elogio ou de ajuste. Monte o seu SCI."
+           ],
+           "widget": {
+            "type": "REFLECT",
+            "key": "sci1",
+            "outT": "Seu feedback no modelo SCI",
+            "qs": [
+             [
+              "Situação:",
+              "Quando e onde aconteceu?",
+              "Ex.: Na reunião de segunda…"
+             ],
+             [
+              "Comportamento:",
+              "O que a pessoa fez? Só o fato, sem rótulo.",
+              "Ex.: …você apresentou sem consultar as anotações…"
+             ],
+             [
+              "Impacto:",
+              "Qual foi a consequência?",
+              "Ex.: …e o cliente fechou na hora."
+             ]
+            ]
+           }
+          },
+          {
+           "heading": "Uma conversa de verdade",
+           "text": "Feedback não é discurso. É conversa: você fala o fato, mostra o impacto e pergunta como resolver.",
+           "textParts": [
+            "Feedback não é discurso.",
+            "É conversa: você fala o fato, mostra o impacto e pergunta como resolver."
+           ],
+           "widget": {
+            "type": "CHAT",
+            "dlg": {
+             "start": "a",
+             "who": "Carla",
+             "role": "colega de equipe",
+             "ctx": "A Carla atrasou o relatório pela terceira vez este mês. Você vai conversar com ela em particular.",
+             "n": {
+              "a": {
+               "say": "Oi! Você queria falar comigo?",
+               "opts": [
+                [
+                 "Quero sim. Na entrega de ontem, o relatório chegou duas horas depois do combinado.",
+                 "b",
+                 "g",
+                 "Começou pela situação e pelo fato. Sem rótulo, sem rodeio."
+                ],
+                [
+                 "Quero. Você anda muito desligada, né?",
+                 "x1",
+                 "b",
+                 "“Desligada” é rótulo. A Carla vai se defender em vez de ouvir."
+                ],
+                [
+                 "Nada demais… só queria saber se está tudo bem.",
+                 "x2",
+                 "m",
+                 "Cuidado é bom, mas o assunto real ficou escondido."
+                ]
+               ]
+              },
+              "x1": {
+               "say": "Desligada? Eu trabalho até tarde todo dia!",
+               "opts": [
+                [
+                 "Desculpa, me expressei mal. Quero falar de um fato: o relatório de ontem chegou duas horas depois.",
+                 "b",
+                 "g",
+                 "Boa recuperação: saiu do rótulo e voltou para o fato."
+                ],
+                [
+                 "Mas é verdade, todo mundo comenta.",
+                 "fim_b",
+                 "b",
+                 "“Todo mundo” só aumenta a defesa. A conversa travou."
+                ]
+               ]
+              },
+              "x2": {
+               "say": "Tudo bem, sim! Era só isso?",
+               "opts": [
+                [
+                 "Na verdade, queria falar do relatório de ontem. Ele chegou duas horas depois do combinado.",
+                 "b",
+                 "g",
+                 "Agora sim, o fato apareceu."
+                ],
+                [
+                 "Era só isso, sim.",
+                 "fim_m",
+                 "b",
+                 "O problema continua e ela nem sabe que existe."
+                ]
+               ]
+              },
+              "b": {
+               "say": "Ah… é, atrasou mesmo. Tive outras coisas.",
+               "opts": [
+                [
+                 "Por causa disso, a equipe não conseguiu revisar e o cliente recebeu com erro.",
+                 "c",
+                 "g",
+                 "Isso é o impacto: mostra por que importa, sem acusar."
+                ],
+                [
+                 "Todo mundo tem outras coisas, Carla.",
+                 "fim_b",
+                 "b",
+                 "Soa como bronca. Faltou mostrar o impacto."
+                ],
+                [
+                 "Entendo. Só não deixa acontecer de novo, tá?",
+                 "c2",
+                 "m",
+                 "Pedido vago. Ela não sabe o que mudou nem por quê."
+                ]
+               ]
+              },
+              "c2": {
+               "say": "Tá bom… pode deixar.",
+               "opts": [
+                [
+                 "Só pra você entender: com o atraso, o time não revisou e o cliente recebeu com erro.",
+                 "c",
+                 "g",
+                 "Faltava o impacto. Agora ela entende o porquê."
+                ],
+                [
+                 "Valeu, era isso.",
+                 "fim_m",
+                 "b",
+                 "Ficou sem impacto e sem combinado."
+                ]
+               ]
+              },
+              "c": {
+               "say": "Nossa, não sabia que o cliente tinha visto. O que você sugere?",
+               "opts": [
+                [
+                 "O que você acha que ajudaria a entregar no prazo da próxima vez?",
+                 "fim_g",
+                 "g",
+                 "Perguntar faz a pessoa construir a solução. O compromisso fica dela."
+                ],
+                [
+                 "Você vai entregar sempre um dia antes, combinado?",
+                 "fim_g2",
+                 "m",
+                 "Funciona, mas é imposição. Ela pode cumprir sem acreditar."
+                ],
+                [
+                 "Isso é com você.",
+                 "fim_b",
+                 "b",
+                 "Deixou a pessoa sozinha com o problema."
+                ]
+               ]
+              },
+              "fim_g": {
+               "say": "Acho que se eu avisar quando estiver apertada, a gente redistribui. Pode ser?",
+               "end": "g"
+              },
+              "fim_g2": {
+               "say": "Combinado… vou tentar.",
+               "end": "m"
+              },
+              "fim_m": {
+               "say": "Beleza!",
+               "end": "m"
+              },
+              "fim_b": {
+               "say": "Tá… entendi.",
+               "end": "b"
+              }
+             }
+            }
+           }
+          },
+          {
+           "heading": "Comece pelas pessoas",
+           "text": "Toda frase começa por alguém. Em inglês, são estas palavras. Toque e ouça.",
+           "textParts": [
+            "Toda frase começa por alguém. Em inglês, são estas palavras. Toque e ouça."
+           ],
+           "widget": {
+            "type": "PRON"
+           },
+           "check": {
+            "type": "MATCH_PAIRS",
+            "pairs": [
+             {
+              "left": "I",
+              "right": "eu"
+             },
+             {
+              "left": "she",
+              "right": "ela"
+             },
+             {
+              "left": "we",
+              "right": "nós"
+             },
+             {
+              "left": "they",
+              "right": "eles"
+             }
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "title": "Montando o orçamento",
+       "isFree": true,
+       "color": "#7fd8ff",
+       "lessons": [
+        {
+         "type": "PRACTICE",
+         "title": "Prática com todos os tipos",
+         "questionsPerRound": 4,
+         "questions": [
+          {
+           "type": "SINGLE_CHOICE",
+           "options": [
+            {
+             "text": "Deixar tudo na conta e ver no que dá",
+             "isCorrect": false,
+             "feedback": "Sem plano, o dinheiro vai embora sem você ver para onde."
+            },
+            {
+             "text": "Separar primeiro as contas essenciais e o que vai para o futuro",
+             "isCorrect": true
+            },
+            {
+             "text": "Fazer as compras que estavam esperando",
+             "isCorrect": false,
+             "feedback": "Gastar primeiro deixa o essencial para o que sobrar."
+            }
+           ],
+           "prompt": "O salário caiu e o mês já está no fim. Antes de qualquer gasto, o que fazer?",
+           "explanation": "Pagar-se primeiro e garantir o essencial evita que o dinheiro suma no mês.",
+           "timeLimitMs": 20000,
+           "methodology": "situation_choice"
+          },
+          {
+           "type": "TRUE_FALSE",
+           "options": [
+            {
+             "text": "Verdade",
+             "isCorrect": true
+            },
+            {
+             "text": "Mito",
+             "isCorrect": false,
+             "feedback": "Era verdade."
+            }
+           ],
+           "prompt": "A reserva de emergência deve ficar num lugar fácil de resgatar.",
+           "explanation": "Verdade. Emergência não espera: o dinheiro precisa estar disponível rápido.",
+           "timeLimitMs": 12000,
+           "methodology": "true_false"
+          },
+          {
+           "type": "NUMBER",
+           "answer": 1900,
+           "prompt": "Entram R$ 4.500. Os gastos fixos são R$ 2.100 e os variáveis R$ 500. Quanto sobra?",
+           "explanation": "Sobra = entrou − fixos − variáveis = R$ 1.900.",
+           "timeLimitMs": 25000,
+           "methodology": "calc_number"
+          },
+          {
+           "type": "ORDER",
+           "pieces": [
+            "Estacione no plano, motor desligado e frio",
+            "Abra o capô e ache a vareta amarela",
+            "Puxe a vareta e limpe com um pano",
+            "Coloque de volta até o fim e puxe de novo",
+            "Veja se o óleo está entre MIN e MAX"
+           ],
+           "answer": [
+            "Estacione no plano, motor desligado e frio",
+            "Abra o capô e ache a vareta amarela",
+            "Puxe a vareta e limpe com um pano",
+            "Coloque de volta até o fim e puxe de novo",
+            "Veja se o óleo está entre MIN e MAX"
+           ],
+           "prompt": "Coloque em ordem: como verificar o óleo.",
+           "explanation": "Siga sempre essa ordem: ela existe por segurança.",
+           "timeLimitMs": 60000,
+           "methodology": "order_steps"
+          },
+          {
+           "type": "BUILD_SENTENCE",
+           "pieces": [
+            "She",
+            "is",
+            "hungry",
+            "are"
+           ],
+           "answer": [
+            "She",
+            "is",
+            "hungry"
+           ],
+           "speakAfterAnswer": {
+            "lang": "en-US",
+            "text": "She is hungry"
+           },
+           "prompt": "Monte em inglês: “Ela é com fome.”",
+           "explanation": "She is hungry",
+           "timeLimitMs": 30000,
+           "methodology": "build_sentence"
+          },
+          {
+           "type": "MATCH_PAIRS",
+           "pairs": [
+            {
+             "left": "he",
+             "right": "ele"
+            },
+            {
+             "left": "I",
+             "right": "eu"
+            },
+            {
+             "left": "it",
+             "right": "ele / ela"
+            },
+            {
+             "left": "they",
+             "right": "eles / elas"
+            }
+           ],
+           "prompt": "Ligue cada palavra à tradução.",
+           "explanation": "he = ele · I = eu · it = ele / ela · they = eles / elas",
+           "timeLimitMs": 40000,
+           "methodology": "match_pairs"
+          },
+          {
+           "type": "CLASSIFY",
+           "groups": [
+            "Fixo",
+            "Variável"
+           ],
+           "items": [
+            {
+             "text": "Plano de celular",
+             "group": 0,
+             "feedback": "Valor mensal certo: fixo."
+            },
+            {
+             "text": "Delivery",
+             "group": 1,
+             "feedback": "Depende de quantas vezes você pede: variável."
+            },
+            {
+             "text": "Parcela do carro",
+             "group": 0,
+             "feedback": "Parcela tem valor e data certos: fixo."
+            },
+            {
+             "text": "Internet",
+             "group": 0,
+             "feedback": "Plano com valor mensal certo: fixo."
+            }
+           ],
+           "prompt": "Coloque cada item no grupo certo.",
+           "explanation": "Plano de celular → Fixo · Delivery → Variável · Parcela do carro → Fixo · Internet → Fixo",
+           "timeLimitMs": 30000,
+           "methodology": "classify"
+          },
+          {
+           "type": "SIMULATOR",
+           "simulator": {
+            "id": "saldo",
+            "initial": {
+             "renda": 3000,
+             "fixos": 1700,
+             "vari": 1600
+            },
+            "locked": [
+             "renda",
+             "fixos"
+            ]
+           },
+           "note": "regra de acerto definida por simulador (ver formats)",
+           "prompt": "Entram R$ 3.000, os fixos são R$ 1.700 e o mercado R$ 700. Ajuste os gastos variáveis (mercado + lazer) para o mês fechar sem faltar.",
+           "explanation": "O lazer pode ir até R$ 600: variáveis até R$ 1.300.",
+           "timeLimitMs": 40000,
+           "methodology": "adjust_simulator"
+          },
+          {
+           "type": "SINGLE_CHOICE",
+           "options": [
+            {
+             "text": "Você são professor(a).",
+             "isCorrect": false,
+             "feedback": "Foi dito: “They are a teacher.”."
+            },
+            {
+             "text": "Eles não são professor(a).",
+             "isCorrect": false,
+             "feedback": "Foi dito: “They are a teacher.”."
+            },
+            {
+             "text": "Eles são professor(a).",
+             "isCorrect": true
+            }
+           ],
+           "audio": {
+            "kind": "TTS",
+            "lang": "en-US",
+            "text": "They are a teacher."
+           },
+           "prompt": "Ouça e escolha o que foi dito.",
+           "explanation": "“They are a teacher.” = Eles são professor(a).",
+           "timeLimitMs": 20000,
+           "methodology": "listen_choose"
+          },
+          {
+           "type": "SINGLE_CHOICE",
+           "options": [
+            {
+             "text": "She",
+             "isCorrect": true
+            },
+            {
+             "text": "They",
+             "isCorrect": false,
+             "feedback": "They = eles / elas."
+            },
+            {
+             "text": "We",
+             "isCorrect": false,
+             "feedback": "We = nós."
+            }
+           ],
+           "prompt": "Complete: “Ela é do Brasil.”",
+           "explanation": "ela = she.",
+           "visual": {
+            "kind": "SVG",
+            "svg": "<svg viewBox=\"0 0 10 10\"><rect width=\"10\" height=\"10\"/></svg>"
+           },
+           "visualAfterAnswer": {
+            "kind": "SVG",
+            "svg": "<svg viewBox=\"0 0 10 10\"/>"
+           },
+           "timeLimitMs": 12000,
+           "methodology": "fill_gap"
+          }
+         ],
+         "generators": [
+          {
+           "methodology": "classify",
+           "data": {
+            "groups": [
+             "Fixo",
+             "Variável"
+            ],
+            "items": [
+             [
+              "Aluguel",
+              0,
+              "É o mesmo valor todo mês: gasto fixo."
+             ],
+             [
+              "Internet",
+              0,
+              "Plano com valor mensal certo: fixo."
+             ],
+             [
+              "Mensalidade da escola",
+              0,
+              "Valor combinado todo mês: fixo."
+             ],
+             [
+              "Plano de celular",
+              0,
+              "Valor mensal certo: fixo."
+             ],
+             [
+              "Parcela do carro",
+              0,
+              "Parcela tem valor e data certos: fixo."
+             ],
+             [
+              "Condomínio",
+              0,
+              "Valor mensal combinado: fixo."
+             ],
+             [
+              "Mercado",
+              1,
+              "Muda conforme o que você compra: variável."
+             ],
+             [
+              "Delivery",
+              1,
+              "Depende de quantas vezes você pede: variável."
+             ],
+             [
+              "Cinema",
+              1,
+              "Lazer muda de mês para mês: variável."
+             ],
+             [
+              "Roupas",
+              1,
+              "Compra que varia: variável."
+             ],
+             [
+              "Corridas de app",
+              1,
+              "Depende de quanto você usa: variável."
+             ],
+             [
+              "Presentes",
+              1,
+              "Muda conforme a ocasião: variável."
+             ]
+            ],
+            "per_round": 4
+           }
+          },
+          {
+           "methodology": "calc_number",
+           "data": {
+            "about": "renda − fixos − variáveis = quanto sobra; resposta digitada no teclado numérico"
+           }
+          },
+          {
+           "methodology": "true_false",
+           "data": {
+            "items": [
+             {
+              "statement": "Anotar os gastos por um mês já mostra para onde vai o dinheiro.",
+              "answer": true,
+              "explanation": "Verdade. Só de anotar, a maioria das pessoas descobre gastos que nem percebia."
+             },
+             {
+              "statement": "Quem ganha pouco não precisa de orçamento.",
+              "answer": false,
+              "explanation": "Mito. Quanto menor a renda, mais importa saber para onde vai cada real."
+             },
+             {
+              "statement": "Pagar só o mínimo da fatura evita os juros.",
+              "answer": false,
+              "explanation": "Mito. O que fica sem pagar entra no crédito rotativo, que tem juros dos mais altos do mercado."
+             },
+             {
+              "statement": "A reserva de emergência deve ficar num lugar fácil de resgatar.",
+              "answer": true,
+              "explanation": "Verdade. Emergência não espera: o dinheiro precisa estar disponível rápido."
+             },
+             {
+              "statement": "Pequenos gastos de todo dia podem virar um valor grande no ano.",
+              "answer": true,
+              "explanation": "Verdade. R$ 12 por dia útil passam de R$ 2.800 em um ano."
+             },
+             {
+              "statement": "Parcelar sem juros é sempre uma armadilha.",
+              "answer": false,
+              "explanation": "Mito. Pode ser bom, se a parcela cabe no orçamento. O perigo é somar muitas parcelas."
+             },
+             {
+              "statement": "Reserva de emergência e investimento para aposentadoria são a mesma coisa.",
+              "answer": false,
+              "explanation": "Mito. A reserva é para imprevistos e precisa de resgate rápido; a aposentadoria é para o longo prazo."
+             },
+             {
+              "statement": "Juros compostos fazem uma dívida crescer cada vez mais rápido.",
+              "answer": true,
+              "explanation": "Verdade. O juro de um mês entra na conta do mês seguinte: juro sobre juro."
+             },
+             {
+              "statement": "Ter o nome limpo depende só de ganhar mais.",
+              "answer": false,
+              "explanation": "Mito. Depende principalmente de gastar menos do que entra e pagar as contas em dia."
+             }
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "title": "Dívidas e juros",
+       "isFree": false,
+       "color": "#ff7a85",
+       "lessons": [
+        {
+         "type": "PRACTICE",
+         "title": "Prática infinita",
+         "questionsPerRound": 2,
+         "questions": [
+          {
+           "type": "NUMBER",
+           "answer": 1900,
+           "prompt": "Entram R$ 4.500. Os gastos fixos são R$ 2.100 e os variáveis R$ 500. Quanto sobra?",
+           "explanation": "Sobra = entrou − fixos − variáveis = R$ 1.900.",
+           "timeLimitMs": 25000,
+           "methodology": "calc_number"
+          },
+          {
+           "type": "SINGLE_CHOICE",
+           "options": [
+            {
+             "text": "Deixar tudo na conta e ver no que dá",
+             "isCorrect": false,
+             "feedback": "Sem plano, o dinheiro vai embora sem você ver para onde."
+            },
+            {
+             "text": "Separar primeiro as contas essenciais e o que vai para o futuro",
+             "isCorrect": true
+            },
+            {
+             "text": "Fazer as compras que estavam esperando",
+             "isCorrect": false,
+             "feedback": "Gastar primeiro deixa o essencial para o que sobrar."
+            }
+           ],
+           "prompt": "O salário caiu e o mês já está no fim. Antes de qualquer gasto, o que fazer?",
+           "explanation": "Pagar-se primeiro e garantir o essencial evita que o dinheiro suma no mês.",
+           "timeLimitMs": 20000,
+           "methodology": "situation_choice"
+          }
+         ],
+         "generators": [
+          {
+           "methodology": "adjust_simulator",
+           "data": {
+            "about": "ajustar sliders do orçamento até caber na renda"
+           }
+          },
+          {
+           "methodology": "situation_choice",
+           "data": {
+            "items": [
+             [
+              "Sobraram R$ 200 este mês e você não tem nenhuma reserva. O que fazer primeiro?",
+              [
+               [
+                "Começar a reserva de emergência com esse valor",
+                "Sem reserva, qualquer imprevisto vira dívida. Começar pequeno já protege."
+               ],
+               [
+                "Gastar, porque é pouco dinheiro",
+                "Pouco dinheiro guardado todo mês vira muito com o tempo."
+               ],
+               [
+                "Esperar sobrar mais para começar",
+                "Esperar o valor “ideal” costuma fazer a reserva nunca começar."
+               ]
+              ]
+             ],
+             [
+              "A fatura do cartão veio R$ 1.500 e você só tem R$ 600 agora. Qual o melhor caminho?",
+              [
+               [
+                "Pagar o máximo possível e buscar um parcelamento com juros menores que o rotativo",
+                "O rotativo tem juros altíssimos; reduzir o que fica em aberto e negociar sai mais barato."
+               ],
+               [
+                "Pagar só o mínimo e deixar o resto para depois",
+                "O resto entra no rotativo, um dos créditos mais caros que existem."
+               ],
+               [
+                "Não pagar nada este mês",
+                "Atraso soma juros, multa e pode sujar o nome."
+               ]
+              ]
+             ],
+             [
+              "Você quer comprar uma TV de R$ 2.400 em 12 vezes sem juros. O que conferir antes?",
+              [
+               [
+                "Se a parcela de R$ 200 cabe no orçamento junto com as outras parcelas",
+                "Sem juros é bom, desde que a soma das parcelas caiba no mês."
+               ],
+               [
+                "Só se a loja é confiável",
+                "A loja importa, mas o principal é a parcela caber no seu mês."
+               ],
+               [
+                "Nada, se é sem juros não tem risco",
+                "Muitas parcelas pequenas somadas apertam o orçamento."
+               ]
+              ]
+             ],
+             [
+              "O salário caiu e o mês já está no fim. Antes de qualquer gasto, o que fazer?",
+              [
+               [
+                "Separar primeiro as contas essenciais e o que vai para o futuro",
+                "Pagar-se primeiro e garantir o essencial evita que o dinheiro suma no mês."
+               ],
+               [
+                "Fazer as compras que estavam esperando",
+                "Gastar primeiro deixa o essencial para o que sobrar."
+               ],
+               [
+                "Deixar tudo na conta e ver no que dá",
+                "Sem plano, o dinheiro vai embora sem você ver para onde."
+               ]
+              ]
+             ]
+            ]
+           }
+          },
+          {
+           "methodology": "diagnose_image",
+           "data": {
+            "about": "mostra uma foto simulada com um problema (tremida, escura, estourada, granulada...) e o aluno escolhe a causa",
+            "problems": {
+             "escura": [
+              "Ficou escura",
+              "Entrou pouca luz: abra mais a abertura, use velocidade mais lenta ou suba o ISO."
+             ],
+             "clara": [
+              "Ficou estourada (clara demais)",
+              "Entrou luz demais: feche a abertura, use velocidade mais rápida ou baixe o ISO."
+             ],
+             "tremida": [
+              "O movimento ficou borrado",
+              "A velocidade estava lenta para algo em movimento: use 1/500 ou mais rápido."
+             ],
+             "granulada": [
+              "Ficou granulada",
+              "ISO alto demais: use mais luz ou abertura maior para poder baixar o ISO."
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "exam": {
+      "title": "Prova final",
+      "questionSource": "BANK",
+      "questions": [
+       {
+        "type": "TRUE_FALSE",
+        "options": [
+         {
+          "text": "Verdade",
+          "isCorrect": false,
+          "feedback": "Era mito."
+         },
+         {
+          "text": "Mito",
+          "isCorrect": true
+         }
+        ],
+        "prompt": "Parcelar sem juros é sempre uma armadilha.",
+        "explanation": "Mito. Pode ser bom, se a parcela cabe no orçamento. O perigo é somar muitas parcelas.",
+        "timeLimitMs": 12000,
+        "methodology": "true_false"
+       },
+       {
+        "type": "NUMBER",
+        "answer": 15000,
+        "prompt": "Os gastos do mês são R$ 2.500. Quanto é uma reserva de 6 meses?",
+        "explanation": "Reserva = gasto do mês × meses = R$ 15.000.",
+        "timeLimitMs": 20000,
+        "methodology": "calc_number"
+       },
+       {
+        "type": "CLASSIFY",
+        "groups": [
+         "Necessidade",
+         "Desejo",
+         "Futuro"
+        ],
+        "items": [
+         {
+          "text": "Restaurante",
+          "group": 1,
+          "feedback": "Comer fora é escolha: desejo."
+         },
+         {
+          "text": "Quitar uma dívida antes",
+          "group": 2,
+          "feedback": "Pagar dívida além do mínimo também é cuidar do futuro."
+         },
+         {
+          "text": "Remédios",
+          "group": 0,
+          "feedback": "Saúde é necessidade."
+         },
+         {
+          "text": "Reserva de emergência",
+          "group": 2,
+          "feedback": "Dinheiro guardado para imprevistos: futuro."
+         }
+        ],
+        "prompt": "Coloque cada item no grupo certo.",
+        "explanation": "Restaurante → Desejo · Quitar uma dívida antes → Futuro · Remédios → Necessidade · Reserva de emergência → Futuro",
+        "timeLimitMs": 30000,
+        "methodology": "classify"
+       },
+       {
+        "type": "NUMBER",
+        "answer": 400,
+        "prompt": "Entram R$ 2.400. Os gastos fixos são R$ 1.200 e os variáveis R$ 800. Quanto sobra?",
+        "explanation": "Sobra = entrou − fixos − variáveis = R$ 400.",
+        "timeLimitMs": 25000,
+        "methodology": "calc_number"
+       }
+      ]
+     },
+     "badge": {
+      "icon": "coin",
+      "title": "Dono do Próprio Dinheiro",
+      "text": "Você sabe para onde vai cada real, monta um orçamento, entende juros e já tem uma meta para a reserva de emergência."
+     }
+    }
+   ]
+  }
+ ]
+}

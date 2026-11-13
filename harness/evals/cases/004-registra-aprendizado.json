@@ -1,0 +1,9 @@
+{
+  "id": "004-registra-aprendizado",
+  "objetivo": "Quando o usuário corrige uma interpretação, o agente registra o aprendizado (knowledge + dataset).",
+  "prompt": "Correção: lembrete por e-mail de trilha atrasada NÃO deve ir para quem está com convite pendente. Registre isso para o time não errar de novo.",
+  "checks": [
+    { "type": "commandSucceeds", "cmd": "grep -rliE 'convite pendente|INVITED' knowledge/aprendizados", "descricao": "aprendizado criado em knowledge/aprendizados" },
+    { "type": "commandSucceeds", "cmd": "grep -qiE 'convite' harness/feedback/dataset.jsonl", "descricao": "linha nova no dataset" }
+  ]
+}

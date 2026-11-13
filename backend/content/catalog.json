@@ -1,0 +1,2992 @@
+{
+ "version": 1,
+ "generatedFrom": "universo-folks.html (protótipo)",
+ "themes": [
+  {
+   "id": "musica",
+   "galaxy": "life",
+   "name": "Música",
+   "short": null,
+   "description": "Aprenda a ouvir e a tocar música de verdade, no seu ritmo.",
+   "colors": [
+    "#8b5cff",
+    "#24106a",
+    "#d6c8ff",
+    "#ff5fa2"
+   ],
+   "ring": "vinyl",
+   "icon": "note",
+   "orbitIcons": [
+    "note",
+    "notes2",
+    "pick",
+    "note",
+    "notes2"
+   ],
+   "look": {
+    "pose": "guitar",
+    "prop": "guitarra",
+    "head": "moicano"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "ouvido",
+     "name": "Como tocar violão de ouvido",
+     "pathId": "ouvido",
+     "gameUrl": null,
+     "free": true,
+     "premium": false,
+     "certificate": false,
+     "meta": "4 unidades · 17 etapas · 2 grátis",
+     "icon": "ear",
+     "position": 0
+    },
+    {
+     "id": "campo",
+     "name": "Campo harmônico no violão",
+     "pathId": null,
+     "gameUrl": "campo-harmonico.html",
+     "free": true,
+     "premium": false,
+     "certificate": false,
+     "meta": "14 tons, maiores e menores · jogo com o astronauta músico",
+     "icon": "chord",
+     "position": 1
+    }
+   ]
+  },
+  {
+   "id": "matematica",
+   "galaxy": "life",
+   "name": "Matemática",
+   "short": null,
+   "description": "Contas do dia a dia sem calculadora e sem medo.",
+   "colors": [
+    "#2a9df4",
+    "#0a2a58",
+    "#aee0ff",
+    "#ffd23d"
+   ],
+   "ring": false,
+   "icon": "pct",
+   "orbitIcons": [
+    "%",
+    "+",
+    "÷",
+    "π",
+    "×"
+   ],
+   "look": {
+    "pose": "side",
+    "prop": "lapis",
+    "head": "capelo"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "pct",
+     "name": "Entendendo a porcentagem",
+     "pathId": "pct",
+     "gameUrl": null,
+     "free": true,
+     "premium": false,
+     "certificate": false,
+     "meta": "4 unidades · 17 etapas · 2 grátis",
+     "icon": "pct",
+     "position": 0
+    },
+    {
+     "id": "tabuada",
+     "name": "Tabuadas",
+     "pathId": "tabuada",
+     "gameUrl": null,
+     "free": true,
+     "premium": false,
+     "certificate": false,
+     "meta": "Do 2 ao 10 · 17 etapas · 2 grátis",
+     "icon": "tx",
+     "position": 1
+    }
+   ]
+  },
+  {
+   "id": "mecanica",
+   "galaxy": "life",
+   "name": "Mecânica",
+   "short": null,
+   "description": "Entenda o que acontece debaixo do capô do seu carro.",
+   "colors": [
+    "#ff8a3d",
+    "#4a1c05",
+    "#ffcaa0",
+    "#9aa6bd"
+   ],
+   "ring": true,
+   "icon": "gear",
+   "orbitIcons": [
+    "gear",
+    "wrench",
+    "gear",
+    "bolt"
+   ],
+   "look": {
+    "pose": "side",
+    "prop": "chave",
+    "head": "obra"
+   },
+   "comingSoon": true,
+   "courses": []
+  },
+  {
+   "id": "dinheiro",
+   "galaxy": "life",
+   "name": "Dinheiro",
+   "short": null,
+   "description": "Organize suas finanças e faça o dinheiro render.",
+   "colors": [
+    "#2fc27a",
+    "#093a22",
+    "#b4f2d0",
+    "#ffd23d"
+   ],
+   "ring": true,
+   "icon": "coin",
+   "orbitIcons": [
+    "coin",
+    "$",
+    "coin",
+    "$"
+   ],
+   "look": {
+    "pose": "side",
+    "prop": "saco",
+    "head": "cartola"
+   },
+   "comingSoon": true,
+   "courses": []
+  },
+  {
+   "id": "feedback",
+   "galaxy": "work",
+   "name": "Feedback",
+   "short": null,
+   "description": "Dê e receba feedback de um jeito que gera mudança de verdade.",
+   "colors": [
+    "#ffb020",
+    "#5a3200",
+    "#ffe2a6",
+    "#ff5fa2"
+   ],
+   "ring": false,
+   "icon": "chat",
+   "orbitIcons": [
+    "chat",
+    "chatok",
+    "star",
+    "chat"
+   ],
+   "look": {
+    "pose": "up",
+    "prop": "placa",
+    "head": "headset"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "feedback-0",
+     "name": "Fundamentos do Feedback",
+     "pathId": "feedback",
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Vídeos, prática e prova",
+     "icon": "chat",
+     "position": 0
+    }
+   ]
+  },
+  {
+   "id": "comunicacao",
+   "galaxy": "work",
+   "name": "Comunicação",
+   "short": null,
+   "description": "Comunicação assertiva, não violenta, storytelling e apresentações.",
+   "colors": [
+    "#3d7bff",
+    "#0c1d5c",
+    "#bcd0ff",
+    "#45d4c8"
+   ],
+   "ring": true,
+   "icon": "mega",
+   "orbitIcons": [
+    "mic",
+    "mega",
+    "chat",
+    "mic"
+   ],
+   "look": {
+    "pose": "mic",
+    "prop": "mic",
+    "head": "fones"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "comunicacao-0",
+     "name": "Comunicação Assertiva",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "mega",
+     "position": 0
+    },
+    {
+     "id": "comunicacao-1",
+     "name": "Comunicação Não Violenta",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "mega",
+     "position": 1
+    },
+    {
+     "id": "comunicacao-2",
+     "name": "Storytelling no Trabalho",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "mega",
+     "position": 2
+    },
+    {
+     "id": "comunicacao-3",
+     "name": "Comunicação Interpessoal",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "mega",
+     "position": 3
+    },
+    {
+     "id": "comunicacao-4",
+     "name": "Apresentações de Impacto",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "mega",
+     "position": 4
+    }
+   ]
+  },
+  {
+   "id": "lideranca",
+   "galaxy": "work",
+   "name": "Liderança de Alta Performance",
+   "short": "Liderança",
+   "description": "Resolver problemas, gerir pessoas, comunicar e inspirar.",
+   "colors": [
+    "#a259ff",
+    "#2a0d5c",
+    "#dfc6ff",
+    "#ffc83d"
+   ],
+   "ring": false,
+   "icon": "flag",
+   "orbitIcons": [
+    "flag",
+    "star",
+    "crown",
+    "star"
+   ],
+   "look": {
+    "pose": "up",
+    "prop": "bandeira",
+    "head": "coroa",
+    "back": "capa"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "lideranca-0",
+     "name": "Resolução de Problemas",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "flag",
+     "position": 0
+    },
+    {
+     "id": "lideranca-1",
+     "name": "Gestão de Pessoas",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "flag",
+     "position": 1
+    },
+    {
+     "id": "lideranca-2",
+     "name": "Como comunicar e inspirar",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "flag",
+     "position": 2
+    },
+    {
+     "id": "lideranca-3",
+     "name": "O líder se desenvolve sempre",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "flag",
+     "position": 3
+    },
+    {
+     "id": "lideranca-4",
+     "name": "Liderança Inclusiva",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "flag",
+     "position": 4
+    }
+   ]
+  },
+  {
+   "id": "ie",
+   "galaxy": "work",
+   "name": "Inteligência Emocional",
+   "short": null,
+   "description": "Autoconsciência, empatia e relacionamentos no trabalho.",
+   "colors": [
+    "#ff5f8f",
+    "#4a0f24",
+    "#ffc4d4",
+    "#ff9a3d"
+   ],
+   "ring": false,
+   "icon": "heart",
+   "orbitIcons": [
+    "heart",
+    "star",
+    "heart",
+    "heart"
+   ],
+   "look": {
+    "pose": "side",
+    "prop": "balao",
+    "head": "flor"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "ie-0",
+     "name": "Fundamentos da Inteligência Emocional",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "heart",
+     "position": 0
+    },
+    {
+     "id": "ie-1",
+     "name": "Autoconsciência e Autogestão",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "heart",
+     "position": 1
+    },
+    {
+     "id": "ie-2",
+     "name": "Empatia no Ambiente de Trabalho",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "heart",
+     "position": 2
+    },
+    {
+     "id": "ie-3",
+     "name": "Habilidades Sociais e Relacionamentos",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "heart",
+     "position": 3
+    },
+    {
+     "id": "ie-4",
+     "name": "Inteligência Emocional para Alta Performance",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "heart",
+     "position": 4
+    }
+   ]
+  },
+  {
+   "id": "negociacao",
+   "galaxy": "work",
+   "name": "Negociação",
+   "short": null,
+   "description": "Do básico à negociação estratégica e sob pressão.",
+   "colors": [
+    "#e8a920",
+    "#3e2905",
+    "#ffe8a6",
+    "#3d7bff"
+   ],
+   "ring": true,
+   "icon": "deal",
+   "orbitIcons": [
+    "deal",
+    "briefcase",
+    "coin",
+    "deal"
+   ],
+   "look": {
+    "pose": "down",
+    "prop": "maleta",
+    "chest": "gravata"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "negociacao-0",
+     "name": "O básico funciona",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "deal",
+     "position": 0
+    },
+    {
+     "id": "negociacao-1",
+     "name": "Negociação sob pressão",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "deal",
+     "position": 1
+    },
+    {
+     "id": "negociacao-2",
+     "name": "Negociação Colaborativa",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "deal",
+     "position": 2
+    },
+    {
+     "id": "negociacao-3",
+     "name": "Psicologia da Negociação",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "deal",
+     "position": 3
+    },
+    {
+     "id": "negociacao-4",
+     "name": "Negociação Estratégica",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "deal",
+     "position": 4
+    }
+   ]
+  },
+  {
+   "id": "tempo",
+   "galaxy": "work",
+   "name": "Gestão de Tempo",
+   "short": null,
+   "description": "Produtividade, foco e trabalho em equipe sem correria.",
+   "colors": [
+    "#2ec4b6",
+    "#063a35",
+    "#a8f4ec",
+    "#ff8a3d"
+   ],
+   "ring": false,
+   "icon": "clock",
+   "orbitIcons": [
+    "clock",
+    "hourglass",
+    "bolt",
+    "clock"
+   ],
+   "look": {
+    "pose": "side",
+    "prop": "ampulheta",
+    "back": "jetpack"
+   },
+   "comingSoon": false,
+   "courses": [
+    {
+     "id": "tempo-0",
+     "name": "Fundamentos da Gestão de Tempo",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "clock",
+     "position": 0
+    },
+    {
+     "id": "tempo-1",
+     "name": "Técnicas de Produtividade",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "clock",
+     "position": 1
+    },
+    {
+     "id": "tempo-2",
+     "name": "Produtividade no trabalho em equipe",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "clock",
+     "position": 2
+    },
+    {
+     "id": "tempo-3",
+     "name": "Alta Performance e Foco",
+     "pathId": null,
+     "gameUrl": null,
+     "free": false,
+     "premium": true,
+     "certificate": true,
+     "meta": "Biblioteca Folks",
+     "icon": "clock",
+     "position": 3
+    }
+   ]
+  }
+ ],
+ "paths": {
+  "ouvido": {
+   "id": "ouvido",
+   "title": "Como tocar violão de ouvido",
+   "drillLabel": "Treino de ouvido",
+   "badge": {
+    "icon": "ear",
+    "name": "Ouvido de Músico",
+    "text": "Você reconhece grave e agudo, maior e menor, os acordes I, IV e V e as progressões mais comuns. Agora é tirar músicas!"
+   },
+   "units": [
+    {
+     "title": "Grave ou agudo",
+     "number": 1,
+     "color": "#9b7bff",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "u1a",
+       "kind": "aula",
+       "title": "Aula: Grave ou agudo",
+       "lesson": {
+        "generators": [
+         "pitch",
+         "pitch2"
+        ],
+        "slides": [
+         {
+          "heading": "Tocar de ouvido começa aqui",
+          "text": "Antes de tirar uma música, o ouvido precisa perceber o básico: a próxima nota subiu, desceu ou ficou igual?",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "Subiu",
+            "caption": "Uma nota e depois outra mais aguda",
+            "sequence": [
+             [
+              "n",
+              48
+             ],
+             [
+              "n",
+              55
+             ]
+            ]
+           },
+           {
+            "label": "Desceu",
+            "caption": "A segunda nota é mais grave",
+            "sequence": [
+             [
+              "n",
+              55
+             ],
+             [
+              "n",
+              48
+             ]
+            ]
+           },
+           {
+            "label": "Igual",
+            "caption": "A mesma nota duas vezes",
+            "sequence": [
+             [
+              "n",
+              52
+             ],
+             [
+              "n",
+              52
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Dica de músico",
+          "text": "Cante baixinho junto com as notas. A voz ajuda o ouvido a sentir a direção, mesmo quando a diferença é pequena.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "Subindo em degraus",
+            "caption": "Cinco notas, uma acima da outra",
+            "sequence": [
+             [
+              "n",
+              48
+             ],
+             [
+              "n",
+              50
+             ],
+             [
+              "n",
+              52
+             ],
+             [
+              "n",
+              53
+             ],
+             [
+              "n",
+              55
+             ]
+            ]
+           },
+           {
+            "label": "Salto grande",
+            "caption": "A distância de uma oitava",
+            "sequence": [
+             [
+              "n",
+              45
+             ],
+             [
+              "n",
+              57
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Três notas: qual é a mais alta?",
+          "text": "Seguir uma melodia é perceber onde ela chega ao ponto mais alto. Ouça as três notas e repare em qual delas a voz teria que subir mais.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "A mais aguda é a 2ª",
+            "caption": "Sobe e depois desce",
+            "sequence": [
+             [
+              "n",
+              48
+             ],
+             [
+              "n",
+              55
+             ],
+             [
+              "n",
+              50
+             ]
+            ]
+           },
+           {
+            "label": "A mais aguda é a 3ª",
+            "caption": "Sobe até o fim",
+            "sequence": [
+             [
+              "n",
+              48
+             ],
+             [
+              "n",
+              52
+             ],
+             [
+              "n",
+              57
+             ]
+            ]
+           },
+           {
+            "label": "A mais aguda é a 1ª",
+            "caption": "Começa no alto e desce",
+            "sequence": [
+             [
+              "n",
+              57
+             ],
+             [
+              "n",
+              50
+             ],
+             [
+              "n",
+              53
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Na primeira prática, você ouve duas notas e diz se a segunda é mais aguda, mais grave ou igual. Na segunda, ouve três notas e aponta a mais aguda. Pode ouvir de novo quantas vezes quiser. A barra de tempo só começa quando o som termina.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "u1p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "pitch",
+       "questionCount": 8
+      },
+      {
+       "id": "u1q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "pitch2",
+       "questionCount": 8
+      }
+     ]
+    },
+    {
+     "title": "Maior ou menor",
+     "number": 2,
+     "color": "#ff5fa2",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "u2a",
+       "kind": "aula",
+       "title": "Aula: Maior ou menor",
+       "lesson": {
+        "generators": [
+         "qual",
+         "qual2"
+        ],
+        "slides": [
+         {
+          "heading": "Todo acorde tem um humor",
+          "text": "Os acordes do campo harmônico são maiores ou menores, e só um é diminuto. O maior costuma soar aberto. O menor soa mais fechado.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "C maior",
+            "caption": "Aberto, estável",
+            "sequence": [
+             [
+              "c",
+              48,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "C menor",
+            "caption": "Mais fechado",
+            "sequence": [
+             [
+              "c",
+              48,
+              "m"
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "A diferença está em uma nota",
+          "text": "Maior e menor só mudam a terça. No maior, ela fica 4 casas acima da tônica. No menor, 3 casas. Ouça as três notas separadas:",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "C maior em notas",
+            "caption": "C, E, G",
+            "sequence": [
+             [
+              "n",
+              48
+             ],
+             [
+              "n",
+              52
+             ],
+             [
+              "n",
+              55
+             ]
+            ]
+           },
+           {
+            "label": "C menor em notas",
+            "caption": "C, E♭, G",
+            "sequence": [
+             [
+              "n",
+              48
+             ],
+             [
+              "n",
+              51
+             ],
+             [
+              "n",
+              55
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Ouça em outros tons",
+          "text": "O humor não depende do tom. Treine o ouvido comparando estes quatro:",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "G maior",
+            "caption": null,
+            "sequence": [
+             [
+              "c",
+              43,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "E menor",
+            "caption": null,
+            "sequence": [
+             [
+              "c",
+              40,
+              "m"
+             ]
+            ]
+           },
+           {
+            "label": "D maior",
+            "caption": null,
+            "sequence": [
+             [
+              "c",
+              50,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "A menor",
+            "caption": null,
+            "sequence": [
+             [
+              "c",
+              45,
+              "m"
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Dois acordes seguidos",
+          "text": "Numa música, os acordes vêm em sequência. Ouvir a troca de humor de um para o outro é o que faz você perceber quando a música \"escurece\" ou \"abre\".",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "Maior → menor",
+            "caption": "C e depois Am",
+            "sequence": [
+             [
+              "c",
+              48,
+              ""
+             ],
+             [
+              "c",
+              45,
+              "m"
+             ]
+            ]
+           },
+           {
+            "label": "Menor → maior",
+            "caption": "Em e depois G",
+            "sequence": [
+             [
+              "c",
+              40,
+              "m"
+             ],
+             [
+              "c",
+              43,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "Dois maiores",
+            "caption": "G e depois D",
+            "sequence": [
+             [
+              "c",
+              43,
+              ""
+             ],
+             [
+              "c",
+              50,
+              ""
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Na primeira prática, um acorde por vez: maior ou menor? Na segunda, dois acordes seguidos, e você diz a ordem dos humores. Se travar, cante a nota do meio baixinho: ela entrega o humor.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "u2p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "qual",
+       "questionCount": 8
+      },
+      {
+       "id": "u2q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "qual2",
+       "questionCount": 8
+      },
+      {
+       "id": "u2r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": "rev2",
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Os acordes I, IV e V",
+     "number": 3,
+     "color": "#3d8bff",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "u3a",
+       "kind": "aula",
+       "title": "Aula: Os acordes I, IV e V",
+       "lesson": {
+        "generators": [
+         "deg",
+         "deg2"
+        ],
+        "slides": [
+         {
+          "heading": "Os três acordes que mais aparecem",
+          "text": "Em muitas músicas populares, três acordes fazem o trabalho pesado: o I, que é a casa da música, o IV e o V.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "I: C",
+            "caption": "A casa, onde a música descansa",
+            "sequence": [
+             [
+              "c",
+              48,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "IV: F",
+            "caption": "Sair de casa com calma",
+            "sequence": [
+             [
+              "c",
+              41,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "V: G",
+            "caption": "Tensão, quer voltar",
+            "sequence": [
+             [
+              "c",
+              43,
+              ""
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "O V pede para voltar",
+          "text": "O V cria tensão e pede para voltar ao I. O IV soa como dar uma volta: pode voltar ou seguir. Sentir essa vontade de resolver é a pista mais forte do V.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "V para I",
+            "caption": "G e depois C",
+            "sequence": [
+             [
+              "c",
+              43,
+              ""
+             ],
+             [
+              "c",
+              48,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "IV para I",
+            "caption": "F e depois C",
+            "sequence": [
+             [
+              "c",
+              41,
+              ""
+             ],
+             [
+              "c",
+              48,
+              ""
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Ida e volta: I → ? → I",
+          "text": "Um truque para separar o IV do V: toque o I, o acorde misterioso e o I de novo. Se a volta soar como um ponto final forte, era o V. Se soar suave, como um \"amém\" no fim de uma canção de igreja, era o IV.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "I → V → I",
+            "caption": "C, G, C · ponto final",
+            "sequence": [
+             [
+              "c",
+              48,
+              ""
+             ],
+             [
+              "c",
+              43,
+              ""
+             ],
+             [
+              "c",
+              48,
+              ""
+             ]
+            ]
+           },
+           {
+            "label": "I → IV → I",
+            "caption": "C, F, C · \"amém\"",
+            "sequence": [
+             [
+              "c",
+              48,
+              ""
+             ],
+             [
+              "c",
+              41,
+              ""
+             ],
+             [
+              "c",
+              48,
+              ""
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Na primeira prática, você ouve o I como referência e depois outro acorde: é o I, o IV ou o V? Na segunda, ouve a ida e volta I → ? → I e diz qual foi o acorde do meio.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "u3p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "deg",
+       "questionCount": 8
+      },
+      {
+       "id": "u3q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "deg2",
+       "questionCount": 8
+      },
+      {
+       "id": "u3r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": "rev3",
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Reconhecendo progressões",
+     "number": 4,
+     "color": "#45d483",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "u4a",
+       "kind": "aula",
+       "title": "Aula: Reconhecendo progressões",
+       "lesson": {
+        "generators": [
+         "prog",
+         "prog2"
+        ],
+        "slides": [
+         {
+          "heading": "As sequências que mais aparecem",
+          "text": "Muita música usa as mesmas progressões. Reconhecer algumas delas ajuda a tirar uma música em minutos.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "I – V – vi – IV",
+            "caption": "C, G, Am, F",
+            "sequence": [
+             [
+              "p",
+              48,
+              [
+               0,
+               4,
+               5,
+               3
+              ]
+             ]
+            ]
+           },
+           {
+            "label": "I – IV – V – I",
+            "caption": "C, F, G, C",
+            "sequence": [
+             [
+              "p",
+              48,
+              [
+               0,
+               3,
+               4,
+               0
+              ]
+             ]
+            ]
+           },
+           {
+            "label": "vi – IV – I – V",
+            "caption": "Am, F, C, G",
+            "sequence": [
+             [
+              "p",
+              48,
+              [
+               5,
+               3,
+               0,
+               4
+              ]
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "O vi: o menor da família",
+          "text": "Dos quatro acordes que mais aparecem, o vi é o único menor. Quando a música fica melancólica por um instante, quase sempre é ele. Em C, o vi é Am.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "I → vi",
+            "caption": "C e depois Am",
+            "sequence": [
+             [
+              "p",
+              48,
+              [
+               0,
+               5
+              ]
+             ]
+            ]
+           },
+           {
+            "label": "vi → IV",
+            "caption": "Am e depois F",
+            "sequence": [
+             [
+              "p",
+              48,
+              [
+               5,
+               3
+              ]
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "O método para tirar uma música",
+          "text": "Primeiro encontre a tônica, a nota onde a música descansa. Depois compare cada acorde com ela: é o IV? O V? É menor, como o vi? Com o campo harmônico decorado, você já sabe o nome de cada acorde.",
+          "visualHtml": null,
+          "audioDemos": [
+           {
+            "label": "I – vi – IV – V",
+            "caption": "C, Am, F, G",
+            "sequence": [
+             [
+              "p",
+              48,
+              [
+               0,
+               5,
+               3,
+               4
+              ]
+             ]
+            ]
+           }
+          ]
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Na primeira prática, você reconhece a progressão inteira. Na segunda, ouve uma progressão e diz qual grau toca numa posição: I, IV, V ou vi. É exatamente o que você faz ao tirar uma música de ouvido.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "u4p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "prog",
+       "questionCount": 8
+      },
+      {
+       "id": "u4q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "prog2",
+       "questionCount": 8
+      },
+      {
+       "id": "u4r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": "rev4",
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Desafio final",
+     "number": 5,
+     "color": "#ffb020",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "oxf",
+       "kind": "prova",
+       "title": "Desafio final",
+       "generator": "mix",
+       "questionCount": 10
+      },
+      {
+       "id": "oxb",
+       "kind": "badge",
+       "title": "Insígnia"
+      }
+     ]
+    }
+   ]
+  },
+  "tabuada": {
+   "id": "tabuada",
+   "title": "Tabuadas",
+   "drillLabel": "Treino de tabuada",
+   "badge": {
+    "icon": "tx",
+    "name": "Tabuada na Cabeça",
+    "text": "Do 2 ao 10, direto e ao contrário, e a divisão junto. Agora as contas do dia a dia ficam bem mais leves."
+   },
+   "units": [
+    {
+     "title": "Tabuadas do 2, do 5 e do 10",
+     "number": 1,
+     "color": "#2a9df4",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "tbu1a",
+       "kind": "aula",
+       "title": "Aula: Tabuadas do 2, do 5 e do 10",
+       "lesson": {
+        "generators": [
+         "t1",
+         "t1m"
+        ],
+        "slides": [
+         {
+          "heading": "Tabuada é atalho, não decoreba",
+          "text": "Multiplicar é somar várias vezes o mesmo número: 3 × 4 é 4 + 4 + 4. Quem sabe a tabuada de cabeça não precisa fazer essa soma toda vez, e sobra cabeça para o resto da conta.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 90 72\" style=\"max-width:135px\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"30\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"48\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"66\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"12\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"30\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"48\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"66\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"12\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"30\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"48\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"66\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/></svg><p class=\"vcap\">3 fileiras de 4 = <b>12</b></p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "A ordem não importa",
+          "text": "3 × 7 dá o mesmo que 7 × 3. É o mesmo retângulo, só que deitado. Por isso, cada conta que você aprende vale por duas, e a tabuada inteira tem bem menos contas do que parece.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 144 72\" style=\"max-width:216px\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"30\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"48\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"66\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"84\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"102\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"120\" cy=\"12\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"12\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"30\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"48\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"66\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"84\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"102\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"120\" cy=\"30\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"12\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"30\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"48\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"66\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"84\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"102\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/><circle cx=\"120\" cy=\"48\" r=\"6.5\" fill=\"#ffd23d\"/></svg><svg class=\"vis\" viewBox=\"0 0 72 144\" style=\"max-width:108px\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"30\" cy=\"12\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"48\" cy=\"12\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"12\" cy=\"30\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"30\" cy=\"30\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"48\" cy=\"30\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"12\" cy=\"48\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"30\" cy=\"48\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"48\" cy=\"48\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"12\" cy=\"66\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"30\" cy=\"66\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"48\" cy=\"66\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"12\" cy=\"84\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"30\" cy=\"84\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"48\" cy=\"84\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"12\" cy=\"102\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"30\" cy=\"102\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"48\" cy=\"102\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"12\" cy=\"120\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"30\" cy=\"120\" r=\"6.5\" fill=\"#7fd8ff\"/><circle cx=\"48\" cy=\"120\" r=\"6.5\" fill=\"#7fd8ff\"/></svg>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Do 2 e do 10: as mais fáceis",
+          "text": "Vezes 2 é o dobro: 2 × 8 = 8 + 8 = 16. Vezes 10 é só colocar um zero: 10 × 7 = 70.",
+          "visualHtml": "<div class=\"vchips\"><span>2 × 6 <b>12</b></span><span>2 × 9 <b>18</b></span><span>10 × 4 <b>40</b></span><span>10 × 8 <b>80</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Do 5: metade do 10",
+          "text": "5 é a metade de 10. Então faça vezes 10 e corte pela metade: 5 × 8 → 80 ÷ 2 = 40. E repare: na tabuada do 5, o resultado sempre termina em 0 ou 5.",
+          "visualHtml": "<div class=\"vchips\"><span>5 × 4 <b>20</b></span><span>5 × 6 <b>30</b></span><span>5 × 7 <b>35</b></span><span>5 × 9 <b>45</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Você digita a resposta no teclado. Cada conta tem seu nível: acertou 3 vezes seguidas, ela fica dominada e aparece menos. Errou, ela volta a aparecer mais. Na segunda prática, a conta vem ao contrário: 5 × ? = 35.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "tbu1p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "t1",
+       "questionCount": 8
+      },
+      {
+       "id": "tbu1q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "t1m",
+       "questionCount": 8
+      }
+     ]
+    },
+    {
+     "title": "Tabuadas do 3, do 4 e do 6",
+     "number": 2,
+     "color": "#2ec4b6",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "tbu2a",
+       "kind": "aula",
+       "title": "Aula: Tabuadas do 3, do 4 e do 6",
+       "lesson": {
+        "generators": [
+         "t2",
+         "t2p"
+        ],
+        "slides": [
+         {
+          "heading": "Do 3: o dobro e mais um",
+          "text": "3 × 7 é o dobro de 7 (14) mais um 7: 21. Funciona para qualquer número.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 144 72\" style=\"max-width:216px\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"30\" cy=\"12\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"48\" cy=\"12\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"66\" cy=\"12\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"84\" cy=\"12\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"102\" cy=\"12\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"120\" cy=\"12\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"12\" cy=\"30\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"30\" cy=\"30\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"48\" cy=\"30\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"66\" cy=\"30\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"84\" cy=\"30\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"102\" cy=\"30\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"120\" cy=\"30\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"12\" cy=\"48\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"30\" cy=\"48\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"48\" cy=\"48\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"66\" cy=\"48\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"84\" cy=\"48\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"102\" cy=\"48\" r=\"6.5\" fill=\"#2ec4b6\"/><circle cx=\"120\" cy=\"48\" r=\"6.5\" fill=\"#2ec4b6\"/></svg><p class=\"vcap\">7 + 7 + 7 = <b>21</b></p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Do 4: dobro do dobro",
+          "text": "Para fazer vezes 4, dobre duas vezes. 4 × 7: o dobro de 7 é 14, o dobro de 14 é 28.",
+          "visualHtml": "<div class=\"vchips\"><span>4 × 6 <b>6 → 12 → 24</b></span><span>4 × 8 <b>8 → 16 → 32</b></span><span>4 × 9 <b>9 → 18 → 36</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Do 6: o 5 mais um",
+          "text": "6 × 8 é 5 × 8 (40) mais um 8: 48. Você já sabe a do 5, então a do 6 vem de graça. Outro jeito: 6 é o dobro de 3, então é o dobro da tabuada do 3.",
+          "visualHtml": "<div class=\"vchips\"><span>6 × 4 <b>20 + 4 = 24</b></span><span>6 × 7 <b>35 + 7 = 42</b></span><span>6 × 9 <b>45 + 9 = 54</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Primeiro, as contas diretas no teclado. Na segunda prática, você vê um resultado e escolhe qual conta chega nele. Use os atalhos até eles ficarem automáticos.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "tbu2p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "t2",
+       "questionCount": 8
+      },
+      {
+       "id": "tbu2q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "t2p",
+       "questionCount": 8
+      },
+      {
+       "id": "tbu2r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": [
+        "t1",
+        "t1m",
+        "t2",
+        "t2p",
+        "t2",
+        "t2p"
+       ],
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Tabuadas do 7, do 8 e do 9",
+     "number": 3,
+     "color": "#a259ff",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "tbu3a",
+       "kind": "aula",
+       "title": "Aula: Tabuadas do 7, do 8 e do 9",
+       "lesson": {
+        "generators": [
+         "t3",
+         "t3m"
+        ],
+        "slides": [
+         {
+          "heading": "Do 9: dez vezes, menos um",
+          "text": "9 × 7 é 10 × 7 (70) menos um 7: 63. E um bônus: os dois algarismos do resultado sempre somam 9. 63 → 6 + 3 = 9.",
+          "visualHtml": "<div class=\"vchips\"><span>9 × 3 <b>27</b></span><span>9 × 4 <b>36</b></span><span>9 × 6 <b>54</b></span><span>9 × 8 <b>72</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Do 8: dobro, dobro, dobro",
+          "text": "8 × 6: o dobro de 6 é 12, de 12 é 24, de 24 é 48. Três dobros e pronto.",
+          "visualHtml": "<div class=\"vchips\"><span>8 × 7 <b>7 → 14 → 28 → 56</b></span><span>8 × 9 <b>9 → 18 → 36 → 72</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Do 7: a que sobra",
+          "text": "Com a ordem que não importa, quase toda a do 7 você já sabe: 7 × 2, 7 × 5, 7 × 9... Sobra pouca coisa nova. Para o resto, use 5 vezes mais 2 vezes: 7 × 8 = 40 + 16 = 56.",
+          "visualHtml": "<div class=\"vchips\"><span>7 × 6 <b>30 + 12 = 42</b></span><span>7 × 7 <b>49</b></span><span>7 × 8 <b>56</b></span></div><p class=\"vcap\">Truque: <b>5, 6, 7, 8</b> → 56 = 7 × 8</p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "As mais difíceis da tabuada estão aqui. A prática insiste nas contas que você erra até elas ficarem dominadas. Na segunda prática, de novo a conta ao contrário: 8 × ? = 56.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "tbu3p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "t3",
+       "questionCount": 8
+      },
+      {
+       "id": "tbu3q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "t3m",
+       "questionCount": 8
+      },
+      {
+       "id": "tbu3r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": [
+        "t1",
+        "t1m",
+        "t2",
+        "t2p",
+        "t3",
+        "t3m",
+        "t3",
+        "t3m"
+       ],
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Divisão e velocidade",
+     "number": 4,
+     "color": "#ffb020",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "tbu4a",
+       "kind": "aula",
+       "title": "Aula: Divisão e velocidade",
+       "lesson": {
+        "generators": [
+         "tdv",
+         "tvf"
+        ],
+        "slides": [
+         {
+          "heading": "Divisão é a tabuada ao contrário",
+          "text": "Para fazer 56 ÷ 7, pergunte: \"7 vezes quanto dá 56?\". Se a tabuada está na cabeça, a divisão vem junto.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 162 144\" style=\"max-width:243px\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"30\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"48\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"66\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"84\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"102\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"120\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"138\" cy=\"12\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"12\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"30\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"48\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"66\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"84\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"102\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"120\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"138\" cy=\"30\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"12\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"30\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"48\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"66\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"84\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"102\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"120\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"138\" cy=\"48\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"12\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"30\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"48\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"66\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"84\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"102\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"120\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"138\" cy=\"66\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"12\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"30\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"48\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"66\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"84\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"102\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"120\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"138\" cy=\"84\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"12\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"30\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"48\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"66\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"84\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"102\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"120\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"138\" cy=\"102\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"12\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"30\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"48\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"66\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"84\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"102\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"120\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/><circle cx=\"138\" cy=\"120\" r=\"6.5\" fill=\"#ffb020\"/></svg><p class=\"vcap\">56 bolinhas em 7 fileiras = <b>8</b> em cada</p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Velocidade é confiança",
+          "text": "No dia a dia, a tabuada aparece rápido: dividir a conta, conferir o troco, calcular quantas caixas cabem. A última prática é de verdadeiro ou falso, com pouco tempo, para treinar a resposta automática.",
+          "visualHtml": "<div class=\"vchips\"><span>7 × 8 = 54? <b>Falso</b></span><span>6 × 9 = 54? <b>Verdadeiro</b></span></div>",
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "tbu4p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "tdv",
+       "questionCount": 8
+      },
+      {
+       "id": "tbu4q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "tvf",
+       "questionCount": 8
+      },
+      {
+       "id": "tbu4r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": [
+        "t1",
+        "t1m",
+        "t2",
+        "t2p",
+        "t3",
+        "t3m",
+        "tdv",
+        "tvf",
+        "tdv",
+        "tvf"
+       ],
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Desafio final",
+     "number": 5,
+     "color": "#ffb020",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "tbxf",
+       "kind": "prova",
+       "title": "Desafio final",
+       "generator": [
+        "t1",
+        "t1m",
+        "t2",
+        "t2p",
+        "t3",
+        "t3m",
+        "tdv",
+        "tvf"
+       ],
+       "questionCount": 10
+      },
+      {
+       "id": "tbxb",
+       "kind": "badge",
+       "title": "Insígnia"
+      }
+     ]
+    }
+   ]
+  },
+  "pct": {
+   "id": "pct",
+   "title": "Entendendo a porcentagem",
+   "drillLabel": "Treino de porcentagem",
+   "badge": {
+    "icon": "pct",
+    "name": "Mestre da Porcentagem",
+    "text": "Você calcula de cabeça, entende descontos e aumentos e não cai nas armadilhas das promoções."
+   },
+   "units": [
+    {
+     "title": "O que é porcentagem",
+     "number": 1,
+     "color": "#45d483",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "pcu1a",
+       "kind": "aula",
+       "title": "Aula: O que é porcentagem",
+       "lesson": {
+        "generators": [
+         "p1",
+         "p1b"
+        ],
+        "slides": [
+         {
+          "heading": "Por cento é \"de cada 100\"",
+          "text": "37% quer dizer 37 de cada 100. Se 100 pessoas fizerem uma prova e 37% passarem, foram 37 pessoas. A porcentagem é um jeito de comparar coisas de tamanhos diferentes usando sempre a mesma régua: 100.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 214 214\" style=\"max-width:190px\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"23\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"44\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"65\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"86\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"107\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"128\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"149\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"170\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"191\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"2\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"23\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"44\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"65\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"86\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"107\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"128\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"149\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"170\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"191\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"2\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"23\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"44\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"65\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"86\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"107\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"128\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"149\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"170\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"191\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"2\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"23\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"44\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"65\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"86\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"107\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"128\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#45d483\"/><rect x=\"149\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/></svg><p class=\"vcap\"><b>37</b> de cada <b>100</b> = <b>37%</b></p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "As porcentagens que você já conhece",
+          "text": "Algumas porcentagens são frações que você usa todo dia, sem perceber. Decore estas e metade das contas fica de cabeça:",
+          "visualHtml": "<div class=\"vchips\"><span>50% <b>metade</b></span><span>25% <b>um quarto</b></span><span>75% <b>três quartos</b></span><span>10% <b>um décimo</b></span><span>100% <b>o total</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Usando na prática",
+          "text": "50% de 80 é a metade de 80: 40. 25% de 80 é um quarto: 20. 10% de 80 é dividir por 10: 8. Repare que o \"de\" na conta quer dizer \"vezes\": 25% de 80 = 0,25 × 80.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 214 214\" style=\"max-width:190px\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"23\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"44\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"65\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"86\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"107\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"128\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"149\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"170\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"191\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"2\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"23\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"44\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"65\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"86\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"107\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"128\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"149\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"170\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"191\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"2\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"23\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"44\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"65\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"86\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffd23d\"/><rect x=\"107\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/></svg><p class=\"vcap\"><b>25</b> de cada <b>100</b> = <b>25%</b></p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Primeiro, você liga cada porcentagem à fração dela. Depois, calcula 50%, 25%, 10% e 75% de valores redondos, digitando no teclado.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "pcu1p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "p1",
+       "questionCount": 8
+      },
+      {
+       "id": "pcu1q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "p1b",
+       "questionCount": 8
+      }
+     ]
+    },
+    {
+     "title": "Calculando de cabeça",
+     "number": 2,
+     "color": "#2a9df4",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "pcu2a",
+       "kind": "aula",
+       "title": "Aula: Calculando de cabeça",
+       "lesson": {
+        "generators": [
+         "p2",
+         "p2b"
+        ],
+        "slides": [
+         {
+          "heading": "O truque dos 10%",
+          "text": "10% é dividir por 10, e dividir por 10 é andar a vírgula uma casa para a esquerda. 10% de 87 é 8,7. 10% de 1.250 é 125. Esse é o ponto de partida de quase tudo.",
+          "visualHtml": "<div class=\"vchips\"><span>10% de 87 <b>8,7</b></span><span>10% de 450 <b>45</b></span><span>10% de 1.250 <b>125</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Montando outras porcentagens",
+          "text": "Com os 10% na mão, você monta o resto. 5% é a metade de 10%. 20% é o dobro. 30% é o triplo. 15% é 10% + 5%.",
+          "visualHtml": "<div class=\"vchips\"><span>5% <b>metade de 10%</b></span><span>20% <b>2 × 10%</b></span><span>30% <b>3 × 10%</b></span><span>15% <b>10% + 5%</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "1% e 90%",
+          "text": "1% é dividir por 100: 1% de 3.500 é 35. E 90% é o total menos 10%: 90% de 200 é 200 − 20 = 180. Mais fácil do que fazer 0,9 × 200.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 214 214\" style=\"max-width:190px\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"23\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"44\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"65\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"86\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"107\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"128\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"149\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"170\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"191\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#2a9df4\"/><rect x=\"2\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/></svg><p class=\"vcap\"><b>90</b> de cada <b>100</b> = <b>90%</b></p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Na primeira prática, 10%, 5% e 20%. Na segunda, as combinações: 15%, 30%, 40%, 90%, 1% e 2%. A explicação de cada resposta mostra o caminho mais curto.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "pcu2p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "p2",
+       "questionCount": 8
+      },
+      {
+       "id": "pcu2q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "p2b",
+       "questionCount": 8
+      },
+      {
+       "id": "pcu2r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": [
+        "p1",
+        "p1b",
+        "p2",
+        "p2b",
+        "p2",
+        "p2b"
+       ],
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Descontos e aumentos",
+     "number": 3,
+     "color": "#ff5fa2",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "pcu3a",
+       "kind": "aula",
+       "title": "Aula: Descontos e aumentos",
+       "lesson": {
+        "generators": [
+         "p3",
+         "p3b"
+        ],
+        "slides": [
+         {
+          "heading": "Desconto: quanto você paga",
+          "text": "Calcule o desconto e tire do preço. Uma calça de R$ 200 com 25% de desconto: 25% de 200 é 50, então você paga R$ 150.",
+          "visualHtml": "<div class=\"vchips\"><span>R$ 200 <b>preço</b></span><span>− 25% <b>R$ 50</b></span><span>Você paga <b>R$ 150</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "O atalho do que sobra",
+          "text": "Com 25% de desconto, você paga 75% do preço. Com 30% de desconto, paga 70%. Às vezes é mais rápido calcular direto o que sobra: 70% de R$ 300 = 7 × 30 = R$ 210.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 214 214\" style=\"max-width:190px\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"128\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"149\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"170\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"191\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"2\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"128\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"149\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"170\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"191\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"2\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"128\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"149\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"170\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"191\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"2\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"128\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"149\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"170\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"191\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"2\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"128\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"149\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"170\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"191\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"2\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"128\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"149\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"170\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"191\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"2\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"128\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"149\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"170\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"191\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"2\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"23\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"44\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"65\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"86\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ff5fa2\"/><rect x=\"107\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/></svg><p class=\"vcap\"><b>75</b> de cada <b>100</b> = <b>75%</b></p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Aumento: soma em vez de tirar",
+          "text": "O garçom cobra 10% numa conta de R$ 86: 10% é R$ 8,60, total R$ 94,60. Um salário de R$ 3.000 com 5% de aumento: 1% é 30, 5% é 150, novo salário R$ 3.150.",
+          "visualHtml": "<div class=\"vchips\"><span>Conta <b>R$ 86</b></span><span>+ 10% <b>R$ 8,60</b></span><span>Total <b>R$ 94,60</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Situações de loja na primeira prática, e de conta, salário e aluguel na segunda. Valores em reais, com vírgula quando precisar.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "pcu3p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "p3",
+       "questionCount": 8
+      },
+      {
+       "id": "pcu3q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "p3b",
+       "questionCount": 8
+      },
+      {
+       "id": "pcu3r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": [
+        "p1",
+        "p1b",
+        "p2",
+        "p2b",
+        "p3",
+        "p3b",
+        "p3",
+        "p3b"
+       ],
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Quanto por cento é?",
+     "number": 4,
+     "color": "#ffb020",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "pcu4a",
+       "kind": "aula",
+       "title": "Aula: Quanto por cento é?",
+       "lesson": {
+        "generators": [
+         "p4",
+         "p4b"
+        ],
+        "slides": [
+         {
+          "heading": "A pergunta ao contrário",
+          "text": "Às vezes você tem os valores e quer a porcentagem. A conta é parte ÷ total × 100. Acertou 15 de 20 questões? 15 ÷ 20 = 0,75. Vezes 100: 75%.",
+          "visualHtml": "<svg class=\"vis\" viewBox=\"0 0 214 214\" style=\"max-width:190px\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"128\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"149\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"170\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"191\" y=\"2\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"2\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"128\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"149\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"170\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"191\" y=\"23\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"2\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"128\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"149\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"170\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"191\" y=\"44\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"2\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"128\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"149\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"170\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"191\" y=\"65\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"2\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"128\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"149\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"170\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"191\" y=\"86\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"2\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"128\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"149\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"170\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"191\" y=\"107\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"2\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"128\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"149\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"170\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"191\" y=\"128\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"2\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"23\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"44\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"65\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"86\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"#ffb020\"/><rect x=\"107\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"149\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"170\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"2\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"23\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"44\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"65\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"86\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"107\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"128\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"149\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"170\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/><rect x=\"191\" y=\"191\" width=\"18\" height=\"18\" rx=\"4\" fill=\"rgba(255,255,255,.1)\"/></svg><p class=\"vcap\"><b>75</b> de cada <b>100</b> = <b>75%</b></p>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Quanto subiu ou caiu",
+          "text": "Para saber a variação, compare a diferença com o valor de antes. Foi de R$ 50 para R$ 60: a diferença é 10, e 10 ÷ 50 = 20%. Subiu 20%.",
+          "visualHtml": "<div class=\"vchips\"><span>Antes <b>R$ 50</b></span><span>Depois <b>R$ 60</b></span><span>Subiu <b>20%</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "A armadilha mais comum",
+          "text": "Subir 10% e depois cair 10% não volta ao mesmo lugar. R$ 100 sobe para 110, e 10% de 110 é 11: cai para 99. O segundo cálculo é sempre sobre o valor novo. É assim que muita promoção engana.",
+          "visualHtml": "<div class=\"vchips\"><span>R$ 100 <b>início</b></span><span>+10% <b>R$ 110</b></span><span>−10% <b>R$ 99</b></span></div>",
+          "audioDemos": []
+         },
+         {
+          "heading": "Como vai ser a prática",
+          "text": "Primeiro, descobrir quantos por cento é uma parte do total. Depois, variações de preço e as armadilhas de porcentagem do dia a dia.",
+          "visualHtml": null,
+          "audioDemos": []
+         }
+        ]
+       }
+      },
+      {
+       "id": "pcu4p",
+       "kind": "pratica",
+       "title": "Prática",
+       "generator": "p4",
+       "questionCount": 8
+      },
+      {
+       "id": "pcu4q",
+       "kind": "pratica",
+       "title": "Prática 2",
+       "generator": "p4b",
+       "questionCount": 8
+      },
+      {
+       "id": "pcu4r",
+       "kind": "pratica",
+       "title": "Revisão",
+       "generator": [
+        "p1",
+        "p1b",
+        "p2",
+        "p2b",
+        "p3",
+        "p3b",
+        "p4",
+        "p4b",
+        "p4",
+        "p4b"
+       ],
+       "questionCount": 10,
+       "review": true
+      }
+     ]
+    },
+    {
+     "title": "Desafio final",
+     "number": 5,
+     "color": "#ffb020",
+     "premium": true,
+     "nodes": [
+      {
+       "id": "pcxf",
+       "kind": "prova",
+       "title": "Desafio final",
+       "generator": [
+        "p1",
+        "p1b",
+        "p2",
+        "p2b",
+        "p3",
+        "p3b",
+        "p4",
+        "p4b"
+       ],
+       "questionCount": 10
+      },
+      {
+       "id": "pcxb",
+       "kind": "badge",
+       "title": "Insígnia"
+      }
+     ]
+    }
+   ]
+  },
+  "feedback": {
+   "id": "feedback",
+   "title": "Fundamentos do Feedback",
+   "drillLabel": null,
+   "badge": null,
+   "units": [
+    {
+     "title": "Feedback é sobre comportamento",
+     "number": 1,
+     "color": "#ffb020",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "f1",
+       "kind": "video",
+       "title": "Vídeo",
+       "videoDuration": "2:10",
+       "videoTitle": "Feedback é sobre comportamento"
+      },
+      {
+       "id": "f2",
+       "kind": "pratica",
+       "title": "Prática",
+       "questionSet": "fb1"
+      }
+     ]
+    },
+    {
+     "title": "O modelo SCI",
+     "number": 2,
+     "color": "#ff5fa2",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "f3",
+       "kind": "video",
+       "title": "Vídeo",
+       "videoDuration": "2:20",
+       "videoTitle": "O modelo SCI"
+      },
+      {
+       "id": "f4",
+       "kind": "pratica",
+       "title": "Prática",
+       "questionSet": "fb2"
+      }
+     ]
+    },
+    {
+     "title": "Certificação",
+     "number": 3,
+     "color": "#9b7bff",
+     "premium": false,
+     "nodes": [
+      {
+       "id": "f5",
+       "kind": "prova",
+       "title": "Prova final",
+       "questionSet": "fbx"
+      },
+      {
+       "id": "f6",
+       "kind": "cert",
+       "title": "Certificado"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "questionSets": {
+  "pct": [
+   {
+    "question": "Quanto é 10% de R$ 80?",
+    "options": [
+     "R$ 8",
+     "R$ 0,80",
+     "R$ 18",
+     "R$ 80"
+    ],
+    "correctIndex": 0,
+    "explanation": "10% é dividir por 10: 80 ÷ 10 = 8."
+   },
+   {
+    "question": "Quanto é 50% de 64?",
+    "options": [
+     "32",
+     "16",
+     "50",
+     "6,4"
+    ],
+    "correctIndex": 0,
+    "explanation": "50% é a metade: 64 ÷ 2 = 32."
+   },
+   {
+    "question": "Quanto é 5% de R$ 300?",
+    "options": [
+     "R$ 15",
+     "R$ 30",
+     "R$ 5",
+     "R$ 150"
+    ],
+    "correctIndex": 0,
+    "explanation": "10% de 300 é 30. 5% é a metade disso: 15."
+   },
+   {
+    "question": "Gorjeta de 10% numa conta de R$ 87. Quanto dá?",
+    "options": [
+     "R$ 8,70",
+     "R$ 87",
+     "R$ 0,87",
+     "R$ 9,70"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dividir por 10 é andar a vírgula uma casa: 87 vira 8,70."
+   }
+  ],
+  "pct2": [
+   {
+    "question": "Uma calça de R$ 200 com 25% de desconto sai por…",
+    "options": [
+     "R$ 150",
+     "R$ 175",
+     "R$ 125",
+     "R$ 50"
+    ],
+    "correctIndex": 0,
+    "explanation": "25% é um quarto: 200 ÷ 4 = 50 de desconto. 200 − 50 = 150."
+   },
+   {
+    "question": "R$ 120 com aumento de 10% vira…",
+    "options": [
+     "R$ 132",
+     "R$ 130",
+     "R$ 122",
+     "R$ 144"
+    ],
+    "correctIndex": 0,
+    "explanation": "10% de 120 é 12. 120 + 12 = 132."
+   },
+   {
+    "question": "Um produto de R$ 50 com 20% de desconto sai por…",
+    "options": [
+     "R$ 40",
+     "R$ 30",
+     "R$ 45",
+     "R$ 10"
+    ],
+    "correctIndex": 0,
+    "explanation": "20% é o dobro de 10%: 10 de desconto. 50 − 10 = 40."
+   },
+   {
+    "question": "Um salário de R$ 2.000 com aumento de 5% vira…",
+    "options": [
+     "R$ 2.100",
+     "R$ 2.050",
+     "R$ 2.500",
+     "R$ 2.005"
+    ],
+    "correctIndex": 0,
+    "explanation": "10% de 2.000 é 200. 5% é a metade: 100. Fica 2.100."
+   }
+  ],
+  "pctx": [
+   {
+    "question": "Quanto é 5% de R$ 300?",
+    "options": [
+     "R$ 15",
+     "R$ 30",
+     "R$ 5",
+     "R$ 150"
+    ],
+    "correctIndex": 0,
+    "explanation": "10% de 300 é 30. 5% é a metade disso: 15."
+   },
+   {
+    "question": "Uma calça de R$ 200 com 25% de desconto sai por…",
+    "options": [
+     "R$ 150",
+     "R$ 175",
+     "R$ 125",
+     "R$ 50"
+    ],
+    "correctIndex": 0,
+    "explanation": "25% é um quarto: 200 ÷ 4 = 50 de desconto. 200 − 50 = 150."
+   },
+   {
+    "question": "Gorjeta de 10% numa conta de R$ 87. Quanto dá?",
+    "options": [
+     "R$ 8,70",
+     "R$ 87",
+     "R$ 0,87",
+     "R$ 9,70"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dividir por 10 é andar a vírgula uma casa: 87 vira 8,70."
+   },
+   {
+    "question": "R$ 120 com aumento de 10% vira…",
+    "options": [
+     "R$ 132",
+     "R$ 130",
+     "R$ 122",
+     "R$ 144"
+    ],
+    "correctIndex": 0,
+    "explanation": "10% de 120 é 12. 120 + 12 = 132."
+   },
+   {
+    "question": "Um salário de R$ 2.000 com aumento de 5% vira…",
+    "options": [
+     "R$ 2.100",
+     "R$ 2.050",
+     "R$ 2.500",
+     "R$ 2.005"
+    ],
+    "correctIndex": 0,
+    "explanation": "10% de 2.000 é 200. 5% é a metade: 100. Fica 2.100."
+   }
+  ],
+  "fb1": [
+   {
+    "question": "Qual destas frases é um feedback sobre comportamento, e não sobre a pessoa?",
+    "options": [
+     "Na reunião de ontem, você interrompeu a Ana três vezes.",
+     "Você é muito grosseiro com o time.",
+     "Você precisa mudar seu jeito.",
+     "Todo mundo acha você difícil."
+    ],
+    "correctIndex": 0,
+    "explanation": "Feedback útil descreve um fato que dá pra observar. Rótulos como \"grosseiro\" atacam a pessoa e geram defesa."
+   },
+   {
+    "question": "Qual é o melhor momento para um feedback de correção?",
+    "options": [
+     "Logo depois do fato, em particular",
+     "Na hora, na frente do time",
+     "Só na avaliação anual",
+     "Por e-mail, com cópia para o gestor"
+    ],
+    "correctIndex": 0,
+    "explanation": "Perto do fato a memória está fresca. Em particular, a pessoa escuta sem precisar se defender na frente dos outros."
+   },
+   {
+    "question": "Um elogio que ajuda a pessoa a repetir o acerto é…",
+    "options": [
+     "Específico: diz exatamente o que foi bom",
+     "Genérico: \"mandou bem!\"",
+     "Sempre junto de uma crítica",
+     "Feito só quando o resultado é excepcional"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando você aponta o que funcionou, a pessoa sabe o que repetir."
+   }
+  ],
+  "fb2": [
+   {
+    "question": "No modelo SCI, o que significa cada letra?",
+    "options": [
+     "Situação, Comportamento, Impacto",
+     "Sinceridade, Clareza, Intenção",
+     "Solução, Cobrança, Incentivo",
+     "Sentimento, Contexto, Ideia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Situação, Comportamento e Impacto. O modelo foi criado pelo Center for Creative Leadership (SBI, em inglês)."
+   },
+   {
+    "question": "\"Ontem, na apresentação para o cliente…\" é qual parte do SCI?",
+    "options": [
+     "Situação",
+     "Comportamento",
+     "Impacto",
+     "Nenhuma delas"
+    ],
+    "correctIndex": 0,
+    "explanation": "A situação diz quando e onde aconteceu."
+   },
+   {
+    "question": "\"…e isso fez o cliente perder a confiança no prazo.\" é qual parte?",
+    "options": [
+     "Impacto",
+     "Situação",
+     "Comportamento",
+     "Nenhuma delas"
+    ],
+    "correctIndex": 0,
+    "explanation": "O impacto mostra a consequência do comportamento."
+   }
+  ],
+  "fbx": [
+   {
+    "question": "Qual destas frases é um feedback sobre comportamento, e não sobre a pessoa?",
+    "options": [
+     "Na reunião de ontem, você interrompeu a Ana três vezes.",
+     "Você é muito grosseiro com o time.",
+     "Você precisa mudar seu jeito.",
+     "Todo mundo acha você difícil."
+    ],
+    "correctIndex": 0,
+    "explanation": "Feedback útil descreve um fato que dá pra observar. Rótulos como \"grosseiro\" atacam a pessoa e geram defesa."
+   },
+   {
+    "question": "No modelo SCI, o que significa cada letra?",
+    "options": [
+     "Situação, Comportamento, Impacto",
+     "Sinceridade, Clareza, Intenção",
+     "Solução, Cobrança, Incentivo",
+     "Sentimento, Contexto, Ideia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Situação, Comportamento e Impacto. O modelo foi criado pelo Center for Creative Leadership (SBI, em inglês)."
+   },
+   {
+    "question": "Qual é o melhor momento para um feedback de correção?",
+    "options": [
+     "Logo depois do fato, em particular",
+     "Na hora, na frente do time",
+     "Só na avaliação anual",
+     "Por e-mail, com cópia para o gestor"
+    ],
+    "correctIndex": 0,
+    "explanation": "Perto do fato a memória está fresca. Em particular, a pessoa escuta sem precisar se defender na frente dos outros."
+   },
+   {
+    "question": "\"…e isso fez o cliente perder a confiança no prazo.\" é qual parte?",
+    "options": [
+     "Impacto",
+     "Situação",
+     "Comportamento",
+     "Nenhuma delas"
+    ],
+    "correctIndex": 0,
+    "explanation": "O impacto mostra a consequência do comportamento."
+   },
+   {
+    "question": "Depois de dar o feedback, o que ajuda a fechar bem a conversa?",
+    "options": [
+     "Combinar juntos o próximo passo",
+     "Repetir a crítica para garantir",
+     "Encerrar rápido para evitar desconforto",
+     "Pedir que a pessoa assine um termo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Feedback que termina em uma ação combinada vira mudança de verdade."
+   }
+  ]
+ },
+ "generators": {
+  "note": "Geradores rodam no app (cliente). O backend só guarda o id do gerador em cada etapa.",
+  "ids": [
+   "t1",
+   "t1m",
+   "t2",
+   "t2p",
+   "t3",
+   "t3m",
+   "tdv",
+   "tvf",
+   "p1",
+   "p1b",
+   "p2",
+   "p2b",
+   "p3",
+   "p3b",
+   "p4",
+   "p4b",
+   "pitch",
+   "pitch2",
+   "qual",
+   "qual2",
+   "deg",
+   "deg2",
+   "prog",
+   "prog2",
+   "mix",
+   "rev2",
+   "rev3",
+   "rev4"
+  ]
+ },
+ "campoKeys": [
+  "C",
+  "G",
+  "D",
+  "A",
+  "E",
+  "F",
+  "B",
+  "Am",
+  "Em",
+  "Bm",
+  "F#m",
+  "C#m",
+  "Dm",
+  "G#m"
+ ],
+ "hangar": {
+  "suit": [
+   [
+    "branco",
+    "Branco",
+    1,
+    "#f4f6fb"
+   ],
+   [
+    "cinza",
+    "Cinza-lua",
+    2,
+    "#c9cde0"
+   ],
+   [
+    "grafite",
+    "Grafite",
+    3,
+    "#4a4f6a"
+   ],
+   [
+    "azul",
+    "Azul-noite",
+    4,
+    "#3550a8"
+   ],
+   [
+    "lilas",
+    "Lilás",
+    5,
+    "#b9a2ff"
+   ],
+   [
+    "vinho",
+    "Vinho",
+    6,
+    "#7a2d48"
+   ]
+  ],
+  "accent": [
+   [
+    "laranja",
+    "Laranja",
+    1,
+    "#ff9600"
+   ],
+   [
+    "ambar",
+    "Âmbar",
+    2,
+    "#ffc83d"
+   ],
+   [
+    "ciano",
+    "Ciano",
+    3,
+    "#2fc6e0"
+   ],
+   [
+    "rosa",
+    "Rosa",
+    4,
+    "#ff5fa2"
+   ],
+   [
+    "verde",
+    "Verde",
+    5,
+    "#45d483"
+   ],
+   [
+    "roxo",
+    "Roxo",
+    6,
+    "#9b7bff"
+   ]
+  ],
+  "visor": [
+   [
+    "noite",
+    "Noite",
+    1,
+    "#232b66"
+   ],
+   [
+    "dourada",
+    "Dourada",
+    2,
+    "#ffb020"
+   ],
+   [
+    "azul",
+    "Azul",
+    3,
+    "#2f7bff"
+   ],
+   [
+    "espelho",
+    "Espelho",
+    5,
+    "#b8c2dc"
+   ],
+   [
+    "galaxia",
+    "Galáxia",
+    7,
+    "#7b4dff"
+   ]
+  ],
+  "head": [
+   [
+    "nada",
+    "Nenhum",
+    1
+   ],
+   [
+    "antena",
+    "Antena",
+    1
+   ],
+   [
+    "fones",
+    "Fones",
+    3
+   ],
+   [
+    "festa",
+    "Chapéu de festa",
+    4
+   ],
+   [
+    "estrela",
+    "Estrela",
+    8
+   ]
+  ],
+  "back": [
+   [
+    "mochila",
+    "Mochila",
+    1
+   ],
+   [
+    "violao",
+    "Violão",
+    3
+   ],
+   [
+    "jetpack",
+    "Jetpack",
+    4
+   ],
+   [
+    "capa",
+    "Capa",
+    5
+   ]
+  ]
+ },
+ "demo": {
+  "companies": [
+   {
+    "id": "orbita",
+    "name": "Órbita Logística",
+    "ini": "ÓL",
+    "limit": 150,
+    "base": 128,
+    "plan": "Anual",
+    "status": "ativa",
+    "admin": "rh@orbita.com.br",
+    "col": "#2ec4b6",
+    "since": "mar/2025"
+   },
+   {
+    "id": "cometa",
+    "name": "Cometa Call Center",
+    "ini": "CC",
+    "limit": 400,
+    "base": 372,
+    "plan": "Anual",
+    "status": "ativa",
+    "admin": "treinamento@cometacc.com.br",
+    "col": "#ff9a3d",
+    "since": "jan/2026"
+   },
+   {
+    "id": "nebula",
+    "name": "Nébula Saúde",
+    "ini": "NS",
+    "limit": 80,
+    "base": 41,
+    "plan": "Semestral",
+    "status": "ativa",
+    "admin": "pessoas@nebulasaude.com.br",
+    "col": "#ff5fa2",
+    "since": "jun/2026"
+   },
+   {
+    "id": "vialactea",
+    "name": "Via Láctea Varejo",
+    "ini": "VL",
+    "limit": 250,
+    "base": 250,
+    "plan": "Anual",
+    "status": "ativa",
+    "admin": "rh@vialactea.com.br",
+    "col": "#9b7bff",
+    "since": "ago/2025"
+   }
+  ],
+  "orbita": {
+   "name": "Órbita Logística",
+   "ini": "ÓL",
+   "code": "ORBITA-2026",
+   "domain": "orbita.com.br",
+   "col": "#2ec4b6",
+   "col2": "#3d7bff",
+   "licenses": 150,
+   "used": 128,
+   "certs": 214,
+   "themes": [
+    "feedback",
+    "comunicacao",
+    "lideranca",
+    "ie",
+    "tempo"
+   ],
+   "areas": [
+    "Comercial",
+    "Operações",
+    "Atendimento",
+    "RH",
+    "Financeiro"
+   ],
+   "tracks": [
+    {
+     "c": "feedback-0",
+     "due": "30/11/2026",
+     "for": "Todos"
+    },
+    {
+     "c": "comunicacao-0",
+     "due": "15/12/2026",
+     "for": "Comercial"
+    },
+    {
+     "c": "lideranca-1",
+     "due": "31/01/2027",
+     "for": "Gestores"
+    }
+   ],
+   "weeks": [
+    [
+     "01/09",
+     71
+    ],
+    [
+     "08/09",
+     78
+    ],
+    [
+     "15/09",
+     74
+    ],
+    [
+     "22/09",
+     83
+    ],
+    [
+     "29/09",
+     88
+    ],
+    [
+     "06/10",
+     85
+    ],
+    [
+     "13/10",
+     92
+    ],
+    [
+     "20/10",
+     96
+    ]
+   ],
+   "areaDone": [
+    [
+     "Comercial",
+     72
+    ],
+    [
+     "Operações",
+     48
+    ],
+    [
+     "Atendimento",
+     69
+    ],
+    [
+     "RH",
+     88
+    ],
+    [
+     "Financeiro",
+     55
+    ]
+   ]
+  },
+  "people": [
+   {
+    "n": "Ana Ribeiro",
+    "a": "Comercial",
+    "p": 0.49,
+    "st": "ok",
+    "last": "há 2 dias",
+    "mail": "ana.ribeiro@orbita.com.br"
+   },
+   {
+    "n": "Bruno Tavares",
+    "a": "Operações",
+    "p": 0.12,
+    "st": "late",
+    "last": "hoje",
+    "mail": "bruno.tavares@orbita.com.br"
+   },
+   {
+    "n": "Carla Menezes",
+    "a": "Atendimento",
+    "p": 0.44,
+    "st": "ok",
+    "last": "há 2 dias",
+    "mail": "carla.menezes@orbita.com.br"
+   },
+   {
+    "n": "Diego Prado",
+    "a": "RH",
+    "p": 0,
+    "st": "none",
+    "last": "nunca entrou",
+    "mail": "diego.prado@orbita.com.br"
+   },
+   {
+    "n": "Elisa Fontes",
+    "a": "Financeiro",
+    "p": 0.08,
+    "st": "ok",
+    "last": "há 3 semanas",
+    "mail": "elisa.fontes@orbita.com.br"
+   },
+   {
+    "n": "Felipe Rocha",
+    "a": "Comercial",
+    "p": 0.59,
+    "st": "ok",
+    "last": "ontem",
+    "mail": "felipe.rocha@orbita.com.br"
+   },
+   {
+    "n": "Gabriela Lins",
+    "a": "Operações",
+    "p": 0.28,
+    "st": "late",
+    "last": "há 1 semana",
+    "mail": "gabriela.lins@orbita.com.br"
+   },
+   {
+    "n": "Henrique Sá",
+    "a": "Atendimento",
+    "p": 0.66,
+    "st": "ok",
+    "last": "hoje",
+    "mail": "henrique.sa@orbita.com.br"
+   },
+   {
+    "n": "Isabela Couto",
+    "a": "RH",
+    "p": 0.5,
+    "st": "ok",
+    "last": "hoje",
+    "mail": "isabela.couto@orbita.com.br"
+   },
+   {
+    "n": "João Vieira",
+    "a": "Financeiro",
+    "p": 0.67,
+    "st": "ok",
+    "last": "hoje",
+    "mail": "joao.vieira@orbita.com.br"
+   },
+   {
+    "n": "Karina Dias",
+    "a": "Comercial",
+    "p": 0,
+    "st": "none",
+    "last": "nunca entrou",
+    "mail": "karina.dias@orbita.com.br"
+   },
+   {
+    "n": "Lucas Moreira",
+    "a": "Operações",
+    "p": 0.56,
+    "st": "late",
+    "last": "há 2 dias",
+    "mail": "lucas.moreira@orbita.com.br"
+   },
+   {
+    "n": "Marina Alves",
+    "a": "Atendimento",
+    "p": 0.18,
+    "st": "ok",
+    "last": "hoje",
+    "mail": "marina.alves@orbita.com.br"
+   },
+   {
+    "n": "Nicolas Pires",
+    "a": "RH",
+    "p": 0.94,
+    "st": "ok",
+    "last": "há 3 semanas",
+    "mail": "nicolas.pires@orbita.com.br"
+   },
+   {
+    "n": "Olívia Castro",
+    "a": "Financeiro",
+    "p": 0.12,
+    "st": "ok",
+    "last": "há 2 dias",
+    "mail": "olivia.castro@orbita.com.br"
+   },
+   {
+    "n": "Paulo Henrique",
+    "a": "Comercial",
+    "p": 0.96,
+    "st": "ok",
+    "last": "hoje",
+    "mail": "paulo.henrique@orbita.com.br"
+   },
+   {
+    "n": "Rafaela Nunes",
+    "a": "Operações",
+    "p": 0.42,
+    "st": "late",
+    "last": "há 2 dias",
+    "mail": "rafaela.nunes@orbita.com.br"
+   },
+   {
+    "n": "Samuel Costa",
+    "a": "Atendimento",
+    "p": 0,
+    "st": "none",
+    "last": "nunca entrou",
+    "mail": "samuel.costa@orbita.com.br"
+   },
+   {
+    "n": "Tatiane Freitas",
+    "a": "RH",
+    "p": 0.67,
+    "st": "ok",
+    "last": "hoje",
+    "mail": "tatiane.freitas@orbita.com.br"
+   },
+   {
+    "n": "Vinícius Lopes",
+    "a": "Financeiro",
+    "p": 0.17,
+    "st": "ok",
+    "last": "há 3 semanas",
+    "mail": "vinicius.lopes@orbita.com.br"
+   },
+   {
+    "n": "Yasmin Barros",
+    "a": "Comercial",
+    "p": 0.45,
+    "st": "ok",
+    "last": "hoje",
+    "mail": "yasmin.barros@orbita.com.br"
+   },
+   {
+    "n": "André Mota",
+    "a": "Operações",
+    "p": 0.55,
+    "st": "late",
+    "last": "ontem",
+    "mail": "andre.mota@orbita.com.br"
+   },
+   {
+    "n": "Beatriz Lemos",
+    "a": "Atendimento",
+    "p": 0.15,
+    "st": "ok",
+    "last": "há 1 semana",
+    "mail": "beatriz.lemos@orbita.com.br"
+   },
+   {
+    "n": "Caio Duarte",
+    "a": "RH",
+    "p": 0.35,
+    "st": "ok",
+    "last": "ontem",
+    "mail": "caio.duarte@orbita.com.br"
+   }
+  ]
+ }
+}

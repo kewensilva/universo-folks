@@ -1,0 +1,24 @@
+{
+  "planet": {
+    "categorySlug": "para-a-vida",
+    "name": "Culinária",
+    "status": "DRAFT",
+    "accessTier": "FREE",
+    "courses": [
+      {
+        "title": "Cozinha básica",
+        "badge": { "icon": "chef", "name": "Chef de Casa", "text": "Você domina o básico!" },
+        "units": [
+          { "title": "Facas", "lessons": [
+            { "type": "LESSON", "title": "Aula: facas", "content": { "slides": [ { "heading": "Tipos de faca", "text": "Chef, legumes e pão." } ] } },
+            { "type": "VIDEO", "title": "Vídeo", "vimeoUrl": "https://vimeo.com/123456789/abcdef1234",
+              "practice": { "questions": [ { "prompt": "Qual faca corta pão?", "options": [ { "text": "Serrilhada", "isCorrect": true }, { "text": "Chef" } ] } ] } }
+          ] },
+          { "title": "Arroz", "lessons": [ { "type": "GENERATED_PRACTICE", "title": "Treino", "generators": ["mix"], "questionCount": 8 } ] },
+          { "title": "Feijão", "lessons": [ { "type": "LESSON", "title": "Aula", "content": { "slides": [ { "heading": "Remolho", "text": "Deixe de molho." } ] } } ] }
+        ],
+        "exam": { "title": "Desafio final", "questionSource": "GENERATED", "generators": ["mix"], "questionCount": 10 }
+      }
+    ]
+  }
+}

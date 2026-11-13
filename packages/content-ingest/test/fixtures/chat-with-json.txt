@@ -1,0 +1,19 @@
+Perfeito! Segue o JSON do planeta Finanças:
+
+```json
+{
+  "tema": {
+    "titulo": "Finanças pessoais",
+    "categoria": "Para a vida",
+    "cursos": [
+      { "titulo": "Orçamento", "trilha": [
+        { "titulo": "Unidade 1", "etapas": [ { "tipo": "aula", "titulo": "Por que orçar", "texto": "Saber para onde vai o dinheiro." } ] },
+        { "titulo": "Unidade 2", "etapas": [ { "tipo": "aula", "titulo": "Método 50-30-20", "texto": "50% necessidades..." } ] },
+        { "titulo": "Unidade 3", "etapas": [ { "tipo": "aula", "titulo": "Planilha", "texto": "Monte sua planilha." } ] },
+      ] }
+    ]
+  }
+}
+```
+
+Quer que eu crie mais algum?

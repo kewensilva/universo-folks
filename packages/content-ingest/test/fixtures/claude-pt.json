@@ -1,0 +1,58 @@
+{
+  "planetas": [
+    {
+      "nome": "Negociação",
+      "categoria": "Para o Trabalho",
+      "descricao": "Aprenda a negociar com método.",
+      "cursos": [
+        {
+          "titulo": "Negociação Ganha-Ganha",
+          "descrição": "Acordos bons para os dois lados.",
+          "modulos": [
+            {
+              "titulo": "Fundamentos",
+              "aulas": [
+                { "tipo": "aula", "titulo": "O que é negociar", "conteudo": "Negociar é buscar acordo.\nToda negociação tem interesses." },
+                { "tipo": "vídeo", "titulo": "Vídeo: os 3 pilares", "link": "https://vimeo.com/111222333/abc123", "duracao": "3:20" },
+                {
+                  "tipo": "quiz",
+                  "titulo": "Quiz dos pilares",
+                  "perguntas": [
+                    { "pergunta": "Qual é o objetivo de uma negociação ganha-ganha?", "alternativas": ["a) Vencer o outro lado", "b) Um acordo bom para os dois", "c) Ceder sempre"], "resposta": "b" },
+                    { "enunciado": "O que é BATNA?", "opcoes": { "a": "A melhor alternativa sem acordo", "b": "Um tipo de contrato" }, "correta": "a" },
+                    { "pergunta": "Interesses são diferentes de posições.", "tipo": "verdadeiro ou falso", "resposta": true }
+                  ]
+                }
+              ]
+            },
+            {
+              "titulo": "Na prática",
+              "aulas": [
+                { "titulo": "Preparação", "video": { "url": null, "titulo": "Como se preparar" } },
+                { "titulo": "Exercício de preparação", "questoes": [ { "pergunta": "O primeiro passo é...", "alternativas": ["Preparar", "Improvisar"], "gabarito": "Preparar" } ] }
+              ]
+            }
+          ],
+          "prova": [
+            { "pergunta": "Pergunta 1 da prova?", "alternativas": ["x", "y", "z", "w"], "correta": 3 },
+            { "pergunta": "Pergunta 2 da prova?", "alternativas": ["um", "dois"], "correta": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Música para iniciantes",
+      "categoria": "vida",
+      "cursos": [
+        {
+          "nome": "Ritmo",
+          "aulas": [
+            { "tipo": "aula", "titulo": "Pulso", "slides": ["O pulso é a batida constante.", { "titulo": "Exemplo", "texto": "Bata palmas no tempo." }] },
+            { "tipo": "pratica", "titulo": "Prática", "perguntas": [ { "pergunta": "O pulso é...?", "alternativas": [ { "texto": "Constante", "correta": true }, { "texto": "Aleatório", "correta": false } ] } ] }
+          ]
+        },
+        "Harmonia básica"
+      ]
+    }
+  ]
+}
